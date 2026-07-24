@@ -22,7 +22,7 @@ func  exec_vkzmn() {
 
 
  
-down_exec :=  exec.Command("sh"  , "down.sh" ) 
+down_exec :=  exec.Command("sh"  , "down_vkzmn.sh" ) 
 
 
 go down_exec.Run()

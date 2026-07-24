@@ -1,0 +1,22 @@
+
+
+up='upp'
+
+
+go build   atila.ati.go  tgram.go
+
+if (( $? )) ; then
+
+exit
+
+else
+
+ echo compiled ok
+
+  git add  *
+  git commit -m  $up
+
+   
+fi
+
+

@@ -59,7 +59,7 @@ for    {
            
                    fmt.Println("erro")
 
-		continue
+		
  
 
 }

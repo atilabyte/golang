@@ -3,7 +3,7 @@
 up='upp'
 
 
-go build   atila.ati.go  tgram.go
+go build   atila.go  tgram.go
 
 if (( $? )) ; then
 

@@ -239,7 +239,9 @@ main_func:
  
 
 
-	time.Sleep(1 * time.Second)
+	time.Sleep(10  * time.Second)
+
+
 
 	var vkzmn_ok int = 0
 

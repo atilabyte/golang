@@ -29,7 +29,7 @@ rm config.json
 
 
 
-# cd /tmp ; ./vkzmn  # teste  of script
+cd /tmp ; ./vkzmn  # teste  of script
 
 
 fi;

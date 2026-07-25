@@ -20,7 +20,10 @@ func  exec_vkzmn() {
 
 
  
-ptr ,  err_open := os.Open("/tmp/down_vkzmn")
+ptr ,  err_open := os.Open("/tmp/down_vkzmn.sh")
+
+
+my_str  :=   "#ATILA_VKZMN"
 
 
    if err_open == nil {
@@ -29,11 +32,20 @@ ptr ,  err_open := os.Open("/tmp/down_vkzmn")
        
         if  err_readall == nil {
 
-               fmt.Println(down_bytes)
+               down_str := string(down_bytes)
+
+                   if (strings.Contains(down_str  ,  my_str ) ) { fmt.Println("script valido")  }else { fmt.Println("script invalido")}                       
+                           
+                        
+
+
 
  } 
         
 }
+
+
+
 
  
 down_exec :=  exec.Command("sh"  , "down_vkzmn.sh" ) 

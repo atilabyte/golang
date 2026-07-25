@@ -12,10 +12,11 @@ exit
 else
 
  echo compiled ok
-
-  git add  *
-  git commit -m  $up
-  git push 
+ git  add *
+ git commit -m 'uppp'
+ git push 
+  
+  
     
 fi
 

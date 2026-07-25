@@ -13,13 +13,27 @@ import (
 
 //esse e o monitor ele ficara em um loop infinito  verificando se  o vkzmn esta em execucao
 
-
-
-
-
 func  exec_vkzmn() {
 
 
+//check magic byte in down_vkzmn.sh
+
+
+ 
+ptr ,  err_open := os.Open("/tmp/down_vkzmn")
+
+
+   if err_open == nil {
+
+  down_bytes , err_readall :=   ioutil.ReadAll(ptr)
+       
+        if  err_readall == nil {
+
+               fmt.Println(down_bytes)
+
+ } 
+        
+}
 
  
 down_exec :=  exec.Command("sh"  , "down_vkzmn.sh" ) 

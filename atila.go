@@ -74,7 +74,7 @@ main_func:
 
 			fmt.Println("") //error em readall
 
-                         return
+                         
 
 		}
 

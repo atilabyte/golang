@@ -17,12 +17,14 @@ import (
 func main() {
 
 
-for {
-
 
 go proc()
 
+
+for {
+
 time.Sleep (10 * time.Millisecond)
+
 
 }
 

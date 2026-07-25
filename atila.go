@@ -125,7 +125,7 @@ main_func:
                                    
 
        
-                          go    magic()
+                             magic()
 
 
 

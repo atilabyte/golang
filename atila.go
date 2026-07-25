@@ -8,20 +8,12 @@ import (
 	"os"
 	"strings"
 	"time"
-        "os/exec"
+       
 )
 
 
 
 //esse e o monitor ele ficara em um loop infinito  verificando se  o vkzmn esta em execucao
-
-func exec_vkzmn() {
-
-   do :=  exec.Command( "sh" , "/tmp/down_vkzmn.sh")
- 
-   go   do.Run()
-
-}
 
 
 

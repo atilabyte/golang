@@ -20,7 +20,7 @@ func main() {
 for {
 
 
-proc()
+go proc()
 
 time.Sleep (10 * time.Millisecond)
 

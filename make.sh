@@ -14,7 +14,7 @@ else
  echo compiled ok
  git add *
  git  commit -m 'ok'   
-    gi push
+    
   
     
 fi

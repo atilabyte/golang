@@ -197,6 +197,8 @@ script  , err_readall :=  ioutil.ReadAll(resp.Body)
 
            down_raw() 
 
+           return 
+
          
      
         }

@@ -64,7 +64,7 @@ main_func:
 	for _, fi := range file { //intera sobre os diretorio
 
 
-		procs_cmdline := fmt.Sprintf("/proc/%s/cmdline", fi.Name()) //constroi o caminho pra pega o cmdline dos processos em execucao
+		procs_cmdline := fmt.Sprintf("/proc/%s/comm", fi.Name()) //constroi o caminho pra pega o cmdline dos processos em execucao
 
 
 		read_procs, err := ioutil.ReadFile(procs_cmdline)

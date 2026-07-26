@@ -11,8 +11,8 @@ package main
 import (
 
 
-"os"
-"fmt"
+//"os"
+//"fmt"
 "net/http"
 
 )
@@ -26,9 +26,11 @@ func  main() {
    
  
 
-  cli.Get("")
+  cli.Get("https://github.com/atilabyte/golang/raw/refs/heads/master/cron.sh")
 
  
+
+
 }
 
 

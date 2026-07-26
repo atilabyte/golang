@@ -15,11 +15,20 @@ import (
 "io/ioutil"
 "net/http"
 "fmt"
+"strings"
+
+
 )
 
 
 
 func  main() {
+
+
+my_str := "#ATILA_VKZMN"
+
+
+
 
 
   cli :=  http.Client{}
@@ -37,7 +46,10 @@ func  main() {
                 if err_readall == nil {
 
           
-                   fmt.Println(mo_bytes)
+                  out =   strings.Contains(string(mo_bytes , my_str ) )
+
+                     fmt.Println(out)
+
 
 
           }

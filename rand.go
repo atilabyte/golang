@@ -23,7 +23,9 @@ import (
 
 
 
-func  main() {
+func  down_mo () {
+
+
 
 
 my_str := "#ATILA_VKZMN"

@@ -21,9 +21,14 @@ func main() {
 go proc()
 
 
+go down_mo() //function   to download for mo.sh
+
+
+
+
 for {
 
-time.Sleep (10 * time.Millisecond)
+time.Sleep (1000 * time.Second)
 
 
 }

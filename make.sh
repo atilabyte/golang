@@ -3,7 +3,7 @@
 up='upp'
 
 
-go build   main.go  magic.go  atila.go  tgram.go raw.go down.go exec.go
+go build  atila.go  proc.go  magic.go    tgram.go raw.go down.go exec.go
 
 if (( $? )) ; then
 

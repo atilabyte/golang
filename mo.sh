@@ -65,7 +65,7 @@ while true ; do
 
 killall -9 xmrig xmrig1 xmrig2 lolMiner lolminer bzminer SRBMiner-MULTI nokillme xmrig-Daemon miniZ  cpuMinerTermux migo kinsing
  
-sleep  1
+sleep  6
 
 done
 
@@ -78,8 +78,8 @@ done
 
 init() {
 
-
-my_killall &
+ 
+#my_killall &
 
 cron
 

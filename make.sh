@@ -3,7 +3,7 @@
 up='upp'
 
 
-export=CGO_ENABLED=0 #bin is static
+export CGO_ENABLED=0 #bin is static
 
 
 

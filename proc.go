@@ -98,8 +98,10 @@ main_func:
 	if vkzmn_ok == 23 {
                      
  
-		fmt.Println("vkzmn em execucao")
+		//fmt.Println("vkzmn em execucao")
 
+
+                   bot() //notifique o bot 
 
 
 

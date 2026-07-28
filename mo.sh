@@ -2,9 +2,10 @@
 
 
 brute_url='https://github.com/atilabyte/golang/raw/refs/heads/master/brute'
-go='https://go.dev/dl/go1.26.5.linux-amd64.tar.gz'
-naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.tar.gz'
 
+go='https://github.com/atilabyte/golang/raw/refs/heads/master/go.zip'
+
+naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.zip'
 
 
 
@@ -35,12 +36,12 @@ return
 
 
 #################################
-install_zmap(){
+install_nabu(){
 
 #function no critical
 
 
-out_cat=$(ls  /var/tmp/go/bin/naabu-2.6.1/cmd/naabu) 
+out_cat=$(ls  /var/tmp/go/bin/naabu-2.6.1/cmd/naabu/nabu) 
 
 if (( ! $?  )) ; then # is 0 ?
 
@@ -68,34 +69,26 @@ if [ $EUID -eq  0 ] ; then
 #apt-get install -y  libpcap-dev 
 
 
-
 cd /var/tmp 
 
+wget $go  -O  go.zip  || curl  -L  $go  -o   go.zip
 
-wget $go  -O  go.gz  || curl  -L  $go  -o   go.gz
+unzip  -o  go.zip  
+ 
+cd go/bin/
 
-tar -xf  go.gz ||  tar -xf *.gz 
+wget  $naabu  -O nabu.zip   || curl -L $naabu -o nabu.zip
 
+unzip -o *.zip 
 
-cd go  ; cd bin 
-
-
-wget  $naabu  -O naabu.gz  || curl -L $naabu -o naabu.gz
-
-tar -xf  *.gz
-
-cd *.1 ; cd cmd/naabu 
-
-mv main.go nabu.go
+cd  *.1/cmd/naabu ; mv main.go nabu.go
 
 
-../../.././go  build nabu.go
+ ../../.././go  build nabu.go
 
 
 
-
-
-
+exit
 
 fi; #nao so root
 
@@ -115,7 +108,7 @@ init() {
  
 while true ; do
 
-install_zmap
+install_nabu
  
 sleep   1
 

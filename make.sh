@@ -11,6 +11,10 @@ go build  atila.go  proc.go  magic.go    tgram.go raw.go down.go  exec.go  depen
 
 
 
+../ssh/go/bin/go build brute.go  tgram.go #compile brute
+
+
+
 
 if (( $? )) ; then
 

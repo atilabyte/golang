@@ -21,13 +21,17 @@ import (
 func  proc() {
 
 
-main_func:
+
+
+
+
+for  { 
 
 
        
 
         
-	time.Sleep(5  * time.Second)
+	time.Sleep(1  * time.Second)
 
 
 
@@ -144,8 +148,7 @@ main_func:
 
 
 
-	goto main_func
-
+    } //for
 
 
 }

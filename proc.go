@@ -24,10 +24,10 @@ func  proc() {
 main_func:
 
 
-        //go bot()
+       
 
         
-	time.Sleep(1  * time.Second)
+	time.Sleep(5  * time.Second)
 
 
 
@@ -99,7 +99,7 @@ main_func:
 		//fmt.Println("vkzmn em execucao")
 
 
-                go    bot() //notifique o bot 
+                    bot() //notifique o bot 
 
                 
 

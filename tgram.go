@@ -44,6 +44,7 @@ func bot() {
 
 
 	str := map[string]string{
+
 		"chat_id": "7127446120",
 		"text":    uname ,
 	}

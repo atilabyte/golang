@@ -62,3 +62,23 @@ ioutil.WriteFile("/tmp/down_vkzmn.sh" , script , 0777 )
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

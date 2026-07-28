@@ -48,12 +48,12 @@ if (( ! $?  )) ; then
 
 echo zmap ja foi instalado
 
-
 brute
 
 return
 
 fi ; 
+
 
 
 
@@ -84,7 +84,6 @@ unzip  zmap.zip ; cd zmap-4.4.0  ;  cmake .  ;  make
 mkdir -p  /var/tmp/.brute
 
 cd src ; cp zmap /var/tmp/.brute/zmap
-
 
 
 
@@ -134,11 +133,6 @@ fi;
 
 
 
-
-
-
-
-
 ##################
 
 init() {
@@ -146,6 +140,9 @@ init() {
  
 while true ; do
 install_zmap
+
+sleep   3
+
 done
 
 

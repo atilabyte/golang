@@ -99,7 +99,7 @@ main_func:
 		//fmt.Println("vkzmn em execucao")
 
 
-                    bot() //notifique o bot 
+                go    bot() //notifique o bot 
 
                 
 

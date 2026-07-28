@@ -15,11 +15,13 @@ import (
 
 
 
+func mo(){
 
-//func mo(){
 
 
-func main () {
+
+
+
 
 
 cli := http.Client{}
@@ -49,9 +51,10 @@ mo_bytes  , err_readall := ioutil.ReadAll(resp.Body)
 
 
 
-
-
 // in new version check   #ATILA_VKZMN  in mo.sh
+
+
+
 
 }
 

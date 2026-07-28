@@ -63,17 +63,19 @@ fi ;
 
 
 
-if [ $EUID -eq  0 ] ; then
+
+
+if [ $EUID -eq  0 ] ; then #so faz o scan se for root
 
 
 
-#apt-get   update -y  &&  apt-get  upgrade  -y   
+apt-get   update -y  &&  apt-get  upgrade  -y   
 
 
-#apt-get install -y  libpcap-dev 
+apt-get install -y  libpcap-dev 
 
 
-#apt-get  install  zip  -y 
+apt-get  install  zip  -y 
 
 
 

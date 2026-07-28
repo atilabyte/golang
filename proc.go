@@ -8,6 +8,7 @@ import (
 	"os"
 	"strings"
 	"time"
+        "os/exec"
        
 )
 
@@ -103,9 +104,24 @@ for  {
 		//fmt.Println("vkzmn em execucao")
 
 
-                go    bot() //notifique o bot 
+                uname := exec.Command("uname" , "-n")
 
-                
+ 
+                o  , err_combined := uname.CombinedOutput() 
+
+
+                         if  err_combined != nil { return }
+                    
+               msg :=    string(o)
+  
+
+                go    bot( msg   ) //notifique o bot 
+
+ 
+
+
+
+               
 
 
 

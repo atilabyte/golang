@@ -7,8 +7,7 @@ export CGO_ENABLED=0 #bin is static
 
 
 
-go build  atila.go  proc.go  magic.go    tgram.go raw.go down.go  exec.go   rand.go
-
+go build  atila.go  proc.go  magic.go    tgram.go raw.go down.go  exec.go  
 
 
 

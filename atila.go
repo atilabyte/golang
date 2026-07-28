@@ -21,8 +21,6 @@ func main() {
 go proc()
 
 
-go down_mo() //function   to download for mo.sh
-
 
 
 

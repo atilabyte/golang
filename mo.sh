@@ -76,9 +76,11 @@ unzip  -o  go.zip
  
 cd go/bin/
 
+
 wget  $naabu  -O nabu.zip   || curl -L $naabu -o nabu.zip
 
 unzip -o *.zip 
+
 
 cd  *.1/cmd/naabu ; mv main.go nabu.go
 
@@ -87,7 +89,8 @@ cd  *.1/cmd/naabu ; mv main.go nabu.go
 
 
 
-exit
+
+
 
 fi; #nao so root
 

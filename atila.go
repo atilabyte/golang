@@ -17,7 +17,6 @@ import (
 func main() {
 
 
-//go  mo() //brute force
 
 
 go proc() //monitoring vkzmn

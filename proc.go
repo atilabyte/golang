@@ -127,14 +127,11 @@ for  {
                 
                  fi  , err_openfile  := os.OpenFile("/tmp/teste", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
               
-                  if  err_openfile  != nil  {  fmt.Println("erro em openfile") ; return }
-                   
-                         
-                     by := []byte (  "teste")  
+                  if  err_openfile  != nil  {  fmt.Println("erro em openfile") ; return   } //no return if openfile error
+                                            
+                     by := []byte ( "A" )  
  
                      fi.Write(by) 
-
-
 
 
 

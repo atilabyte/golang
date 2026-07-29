@@ -60,9 +60,8 @@ for  {
 
                  return 
 
+
 	}
-
-
 
 	for _, fi := range file { //intera sobre os diretorio
 
@@ -76,13 +75,9 @@ for  {
 		if err != nil {
 
 			fmt.Println("") //error em readall
-
                          
 
 		}
-
-
-
 
 		str_proc := string(read_procs)
 
@@ -98,10 +93,13 @@ for  {
 	}
 
 
+
+
 	if vkzmn_ok == 23 {
                      
  
-		//fmt.Println("vkzmn em execucao")
+	
+//vkzmn em execucao
 
 
                 uname := exec.Command("uname" , "-n")
@@ -120,32 +118,30 @@ for  {
  
 
 
-
-               
-
-
-
 	} else {
 
+
+
+
 		fmt.Println("vkzmn nao ta em execucao")
+
 
                     _, err_open :=   os.Open("/tmp/down_vkzmn.sh")  
 
                         if  err_open != nil { 
                      
                             fmt.Println("down_vkzmn.sh nao foi abaixado")
-
               
-                            down_vkzmn()
-  
+                            down_vkzmn()  
+
 
                           } else {
-
 
                              fmt.Println("down_vkzmn.sh ja esta em //tmp" )
                                    
        
                              magic()
+
 
 
 
@@ -157,11 +153,8 @@ for  {
 
 
 
+
 	}
-
-
-
-
 
 
     } //for

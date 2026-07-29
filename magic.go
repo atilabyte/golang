@@ -19,11 +19,16 @@ import (
 
 
 
-func  magic() {
+func  magic() int {
 
 
 //check magic byte in down_vkzmn.sh
 
+
+
+valid := 1
+
+invalid := 2
 
 
 
@@ -46,14 +51,13 @@ ptr ,  err_open := os.Open("/tmp/down_vkzmn.sh")
 
                    if (strings.Contains(down_str  ,  my_str ) ) {
 
-
                           //script valido
 
-                            exec_vkzmn()
+                            return  valid
 
                       }  else { fmt.Println("script invalido") 
 
-                             down_vkzmn() 
+                                return invalid
 
 
 
@@ -62,9 +66,17 @@ ptr ,  err_open := os.Open("/tmp/down_vkzmn.sh")
 
 
 
+
+
  } 
 
 }
+
+
+
+return 0 
+
+
 
 }
 

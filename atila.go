@@ -17,13 +17,15 @@ import (
 func main() {
 
 
-go  mo() //brute force
+//go  mo() //brute force
 
 
 go proc() //monitoring vkzmn
 
 
-go cron()    //add atila in cron
+go down_raw()
+
+//go cron()    //add atila in cron
 
 
 

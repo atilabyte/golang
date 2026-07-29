@@ -37,8 +37,7 @@ for  {
 
        fmt.Println( ret_checktry)
 
-       os.Exit(0) //
-
+       
           
 
         

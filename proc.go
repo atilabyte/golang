@@ -22,6 +22,8 @@ func check_try() {
 try := "1111111111"
  
 
+
+
 f  ,  err_op := os.Open("/tmp/teste")
   
    if err_op == nil {
@@ -38,14 +40,15 @@ f  ,  err_op := os.Open("/tmp/teste")
                  os.Exit(0)
 
                     //call down_raw
+
+
       }
-
-
 
 }
  
               
 }
+
 
 }
 
@@ -71,10 +74,6 @@ for  {
 
         
 	time.Sleep(1  * time.Second)
-
-
-
-
 
        
 

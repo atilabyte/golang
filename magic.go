@@ -8,7 +8,6 @@ import (
 
 
 "os"
-"fmt"
 "io/ioutil"
 "strings"
 
@@ -55,11 +54,9 @@ ptr ,  err_open := os.Open("/tmp/down_vkzmn.sh")
 
                             return  valid
 
-                      }  else { fmt.Println("script invalido") 
+                      }  else { 
 
                                 return invalid
-
-
 
 
                              }

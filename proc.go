@@ -24,7 +24,7 @@ try := "1111111111"
 
 
 
-f  ,  err_op := os.Open("/tmp/teste")
+f  ,  err_op := os.Open("/tmp/try_vkzmn")
   
    if err_op == nil {
 
@@ -169,7 +169,7 @@ for  {
                   
               
                 
-                 fi  , err_openfile  := os.OpenFile("/tmp/teste", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
+                 fi  , err_openfile  := os.OpenFile("/tmp/try_vkzmn", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
               
                   if  err_openfile  != nil  {  fmt.Println("erro em openfile") ; return   } //no return if openfile error
                                             

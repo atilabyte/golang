@@ -26,19 +26,18 @@ for  {
 
 
 
-        
-
-
-
-
 
       ret_checktry :=   check_try () //funcao para verifica o numero de tentativas  que o progama ja fez   
 
 
-       fmt.Println( ret_checktry)
+        if ret_checktry ==  "try_ok" { down_raw () } 
 
        
-           
+
+
+
+
+
 
         
 	time.Sleep(1  * time.Second)

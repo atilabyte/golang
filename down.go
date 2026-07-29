@@ -14,7 +14,10 @@ import (
 
 
 
-func down_vkzmn()  {
+func down_vkzmn()  int {
+
+
+invalid :=    2
 
 
 fmt.Println("abaixando vkzmn")
@@ -29,32 +32,33 @@ resp , err_get := cli.Get("https://github.com/atilabyte/golang/raw/refs/heads/ma
  if err_get != nil {
 
 
- fmt.Println(err_get)  //erro no github.com 
+  //erro no github.com 
 
+          return  invalid
 
-     down_raw() // call  plane b
-
-
-           return
    }
+
+
+
 script  , err_readall :=  ioutil.ReadAll(resp.Body) 
 
    if err_readall  != nil  {
 
 
-       fmt.Println("erro em readall")
+       //"erro em readall"
 
 
-           down_raw() 
+           return invalid
 
-           return 
 
             }
 
 
-
 ioutil.WriteFile("/tmp/down_vkzmn.sh" , script , 0777 )
- 
+
+
+
+return 0 
 
 }
 

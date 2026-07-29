@@ -38,7 +38,7 @@ for  {
        fmt.Println( ret_checktry)
 
        
-          os.Exit(0)          
+           
 
         
 	time.Sleep(1  * time.Second)

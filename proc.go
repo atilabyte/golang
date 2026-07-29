@@ -123,6 +123,8 @@ for  {
 
 
 
+
+
 		fmt.Println("vkzmn nao ta em execucao")
 
 
@@ -140,8 +142,10 @@ for  {
                              fmt.Println("down_vkzmn.sh ja esta em //tmp" )
                                    
        
-                             magic()
+                             ret_magic :=  magic()
 
+
+                              fmt.Println(ret_magic)
 
 
 

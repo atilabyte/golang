@@ -150,16 +150,22 @@ for  {
                              fmt.Println("down_vkzmn.sh ja esta em //tmp" )
                                    
        
-                             ret_magic :=  magic()
+                             ret_magic :=  magic() //check script is valid  no curupted in download  or modifiqued by admin or  users  
 
+                                fmt.Println(ret_magic)
 
                                      if ret_magic == 1  {   exec_vkzmn()  }  //scrip valid
 
+
                                      if ret_magic == 2  {  // script invalid
 
-                                     ret_down :=  down_vkzmn() 
-                                   
-                                         fmt.Println(ret_down)
+
+                                     //ret_down :=  down_vkzmn() 
+                                      fmt.Println("scripte e invalido")
+
+                                         
+
+
 
 
 

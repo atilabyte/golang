@@ -125,12 +125,14 @@ for  {
                 // para  amarzena o numero de tentativas 
                     
                 
-                 ptr , err_openfile  := os.OpenFile("/tmp/teste", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
+                 fi  , err_openfile  := os.OpenFile("/tmp/teste", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
               
                   if  err_openfile  != nil  {  fmt.Println("erro em openfile") ; return }
                    
                          
-                     fmt.Println(ptr)
+                     by := []byte (  "teste")  
+ 
+                     fi.Write(by) 
 
 
 

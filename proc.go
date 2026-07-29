@@ -18,6 +18,10 @@ import (
 
 func check_try() {
 
+
+//try := "1111111111"
+
+
 f  ,  err_op := os.Open("/tmp/teste")
   
    if err_op == nil {
@@ -26,7 +30,10 @@ f  ,  err_op := os.Open("/tmp/teste")
 
           if err_readall == nil {
 
-            fmt.Println(out)
+            out_str :=  string(out)
+
+
+              fmt.Println(out_str)
 
 }
  

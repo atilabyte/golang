@@ -16,11 +16,6 @@ import (
 
 
 
-
-
-
-
-
 func  proc() {
 
 
@@ -32,11 +27,19 @@ for  {
 
 
         
+
+
+
+
+
       ret_checktry :=   check_try () //funcao para verifica o numero de tentativas  que o progama ja fez   
 
 
        fmt.Println( ret_checktry)
 
+       os.Exit(0) //
+
+          
 
         
 	time.Sleep(1  * time.Second)
@@ -55,6 +58,15 @@ for  {
 
 
 	}
+
+
+
+
+
+
+
+
+
 
 
 

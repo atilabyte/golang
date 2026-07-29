@@ -155,7 +155,7 @@ for  {
                msg :=    string(o)
   
 
-                go    bot( msg   ) //notifique o bot 
+                    bot( msg   ) //notifique o bot 
 
  
 

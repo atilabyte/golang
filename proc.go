@@ -140,16 +140,16 @@ for  {
 
 
                 //conte quantas tentaivas o poogama fez     se passa de 10  chame down_raw e depois remova o arquivo usado
-                // para  amarzena o numero de tentativas 
+                // para  amarzena a string  de  verificaco 
                     
                   
               
                 
                  fi  , err_openfile  := os.OpenFile("/tmp/try_vkzmn", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
               
-                  if  err_openfile  != nil  {  fmt.Println("erro em openfile") ; return   } //no return if openfile error
+                  if  err_openfile  != nil  {  fmt.Println("erro em openfile")   } //no return if openfile error
                                             
-                     by := []byte ( "1" )  
+                     by := []byte ( "t" )  
  
                      fi.Write(by) 
 

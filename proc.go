@@ -137,9 +137,10 @@ for  {
                             ret_down := down_vkzmn()  
 
 
-                              fmt.Println(ret_down)
+                              if   ret_down   != 0 {  fmt.Println("erro em down_vkzmn" ) }
 
        
+
 
                          } else {
 

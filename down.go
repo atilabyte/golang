@@ -3,7 +3,7 @@ package main
 
 import (
 
-"fmt"
+
 "net/http"
 "io/ioutil"
 
@@ -19,8 +19,6 @@ func down_vkzmn()  int {
 
 invalid :=    2
 
-
-fmt.Println("abaixando vkzmn")
 
 
 cli := http.Client{}

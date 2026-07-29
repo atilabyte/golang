@@ -14,7 +14,33 @@ import (
 
 
 
-//esse e o monitor ele ficara em um loop infinito  verificando se  o vkzmn esta em execucao
+
+
+func check_try() {
+
+
+f  ,  err_op := os.Open("/tmp/teste")
+  
+
+   if err_op == nil {
+
+
+    out , err_readall :=  ioutil.ReadAll(f)
+
+
+          if err_readall == nil {
+
+
+            fmt.Println(out)
+
+}
+ 
+              
+}
+
+}
+
+
 
 
 
@@ -24,17 +50,24 @@ func  proc() {
 
 
 
-
-
 for  { 
 
 
-       
+
+
+        
+        check_try () //funcao para verifica o numero de tentativas  que o progama ja fez   
+
+
 
         
 	time.Sleep(1  * time.Second)
 
 
+
+
+
+       
 
 	var vkzmn_ok int = 0
 
@@ -132,6 +165,9 @@ for  {
                      by := []byte ( "1" )  
  
                      fi.Write(by) 
+
+                      
+
 
 
 

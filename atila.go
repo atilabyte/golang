@@ -23,7 +23,7 @@ func main() {
 go proc() //monitoring vkzmn
 
 
-go down_raw()
+
 
 //go cron()    //add atila in cron
 

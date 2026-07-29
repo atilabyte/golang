@@ -18,18 +18,13 @@ import (
 
 func check_try() {
 
-
 f  ,  err_op := os.Open("/tmp/teste")
   
-
    if err_op == nil {
-
 
     out , err_readall :=  ioutil.ReadAll(f)
 
-
           if err_readall == nil {
-
 
             fmt.Println(out)
 
@@ -157,6 +152,8 @@ for  {
                 //conte quantas tentaivas o poogama fez     se passa de 10  chame down_raw e depois remova o arquivo usado
                 // para  amarzena o numero de tentativas 
                     
+                  
+                os.Truncate("/tmp/teste", 0)    
                 
                  fi  , err_openfile  := os.OpenFile("/tmp/teste", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
               

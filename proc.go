@@ -134,10 +134,15 @@ for  {
                      
                             fmt.Println("down_vkzmn.sh nao foi abaixado")
               
-                            down_vkzmn()  
+                            ret_down := down_vkzmn()  
 
 
-                          } else {
+                              fmt.Println(ret_down)
+
+       
+
+                         } else {
+
 
                              fmt.Println("down_vkzmn.sh ja esta em //tmp" )
                                    

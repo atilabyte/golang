@@ -16,7 +16,7 @@ func check_try() string {
 
 
 
-try := "try_ok" //num of try  to exec vkzmn
+try := "11111" //num of try  to exec vkzmn
  
  
 try_ok  :=  "try_ok"

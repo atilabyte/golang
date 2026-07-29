@@ -6,15 +6,19 @@ import (
 
 "os"
 "io/ioutil"
-"fmt"
+
 
 )
 
 
 
-func check_try() {
+func check_try() int {
 
-try := "1111111111"
+
+try := "1111111111" //num of try  to exec vkzmn
+
+try_ok  :=  10
+
 
 
 f  ,  err_op := os.Open("/tmp/try_vkzmn")  
@@ -27,18 +31,21 @@ f  ,  err_op := os.Open("/tmp/try_vkzmn")
 
             out_str :=  string(out)
 
-               if out_str == try { fmt.Println("o progama ja fez muitas tentativas" )  
+               if out_str == try { 
+  
+//o progama ja fez muitas tentativas
 
-                 down_raw()
+                    return  try_ok 
 
-                    //call down_raw
-
-      }
-
+                  }
 
 }
                
 }
+
+
+
+return 0
 
 }
 

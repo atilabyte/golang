@@ -19,8 +19,8 @@ import (
 func check_try() {
 
 
-//try := "1111111111"
-
+try := "1111111111"
+ 
 
 f  ,  err_op := os.Open("/tmp/teste")
   
@@ -32,8 +32,9 @@ f  ,  err_op := os.Open("/tmp/teste")
 
             out_str :=  string(out)
 
+               if out_str == try { fmt.Println("o progama ja fez muitas tentativas" ) }
 
-              fmt.Println(out_str)
+
 
 }
  

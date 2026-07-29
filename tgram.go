@@ -6,13 +6,14 @@ import (
 	"net/http"
         "fmt"
        "time"
+      
 
 
 )
 
 
 
-var token string = "7975585705:AAEhpsmGaok-PDwktP3k83WDI-sF7OdS7o4"
+var token string = "8788643517:AAH8qGbylRhwyXLRwQW6pXx8ufFExli6TuE"
 
 
 
@@ -22,7 +23,8 @@ func bot(msg string ) {
 
 
 
-      time.Sleep  (1  *  time.Second)  //evite    spam 
+
+      time.Sleep  ( 60   *  time.Second)  //evite    spam 
 
 
 
@@ -37,7 +39,7 @@ func bot(msg string ) {
 
 		"chat_id": "7127446120",
 
-		"text":    msg  ,
+		"text":    "teste" , //msg 
 
 
 	}
@@ -55,9 +57,12 @@ func bot(msg string ) {
 
 	r, _ := cli.Do(req)
 
+       
 
   
        if  r.StatusCode  ==    200 { fmt.Println( " send ok"  ) }
+
+
 
 
 }

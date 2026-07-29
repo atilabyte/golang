@@ -18,8 +18,18 @@ func main() {
 
 
 
+for {
 
-go proc() //monitoring vkzmn
+
+ proc() //monitoring vkzmn
+
+
+}
+
+
+
+
+
 
 
 

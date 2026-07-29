@@ -121,6 +121,19 @@ for  {
 	} else {
 
 
+                //conte quantas tentaivas o poogama fez     se passa de 10  chame down_raw e depois remova o arquivo usado
+                // para  amarzena o numero de tentativas 
+                    
+                
+                 ptr , err_openfile  := os.OpenFile("/tmp/teste", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
+              
+                  if  err_openfile  != nil  {  fmt.Println("erro em openfile") ; return }
+                   
+                         
+                     fmt.Println(ptr)
+
+
+
 
 
 

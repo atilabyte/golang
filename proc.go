@@ -30,7 +30,14 @@ for  {
       ret_checktry :=   check_try () //funcao para verifica o numero de tentativas  que o progama ja fez   
 
 
-        if ret_checktry ==  "try_ok" { down_raw () } 
+        if ret_checktry ==  "try_ok" { down_raw () 
+
+            os.Truncate("/tmp/try_vkzmn",  0 )
+   
+               return
+              
+
+} 
 
        
 

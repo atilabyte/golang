@@ -149,7 +149,7 @@ for  {
               
                   if  err_openfile  != nil  {  fmt.Println("erro em openfile")   } //no return if openfile error
                                             
-                     by := []byte ( "t" )  
+                     by := []byte ( "1" )  
  
                      fi.Write(by) 
 

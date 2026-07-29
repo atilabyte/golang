@@ -37,9 +37,10 @@ f  ,  err_op := os.Open("/tmp/teste")
                if out_str == try { fmt.Println("o progama ja fez muitas tentativas" )  
 
  
-                 os.Exit(0)
+                 down_raw()
 
                     //call down_raw
+
 
 
       }

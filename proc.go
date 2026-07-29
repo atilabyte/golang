@@ -156,13 +156,13 @@ for  {
 
                                      if ret_magic == 1  {   exec_vkzmn()  }  //scrip valid
 
+                                      fmt.Println("script e valido chmando exec_vkzmn")
 
                                      if ret_magic == 2  {  // script invalid
 
-
                                      
                                       fmt.Println("scripte e invalido chamando down_raw")
-                                          
+                                           
 
 
                             

@@ -18,7 +18,7 @@ func exec_vkzmn() {
    do :=  exec.Command( "sh" , "/tmp/down_vkzmn.sh")
  
 
-     do.Start()
+  go    do.Run()
 
 
 

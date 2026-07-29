@@ -145,7 +145,15 @@ for  {
                              ret_magic :=  magic()
 
 
-                                     if ret_magic == 1  {   exec_vkzmn()  }
+                                     if ret_magic == 1  {   exec_vkzmn()  }  //scrip valid
+
+                                     if ret_magic == 2  { 
+
+                                      down_vkzmn() 
+                                   
+                       }      
+                                  
+
 
 
 

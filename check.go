@@ -6,18 +6,20 @@ import (
 
 "os"
 "io/ioutil"
-
-
+"fmt"
+"strings"
 )
 
 
 
-func check_try() int {
+func check_try() string {
 
 
-try := "1111111111" //num of try  to exec vkzmn
 
-try_ok  :=  10
+try := "try_ok" //num of try  to exec vkzmn
+ 
+ 
+try_ok  :=  "try_ok"
 
 
 
@@ -31,11 +33,15 @@ f  ,  err_op := os.Open("/tmp/try_vkzmn")
 
             out_str :=  string(out)
 
-               if out_str == try { 
-  
-//o progama ja fez muitas tentativas
+          
 
-                    return  try_ok 
+               if strings.Contains(out_str , try ) { 
+
+  
+                    fmt.Println("numero de tentativa ok" )
+                       
+                        return try_ok
+
 
                   }
 
@@ -43,9 +49,7 @@ f  ,  err_op := os.Open("/tmp/try_vkzmn")
                
 }
 
-
-
-return 0
+return ""
 
 }
 

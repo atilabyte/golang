@@ -39,7 +39,7 @@ func bot(msg string ) {
 
 		"chat_id": "7127446120",
 
-		"text":    "teste" , //msg 
+		"text":    msg  , 
 
 
 	}

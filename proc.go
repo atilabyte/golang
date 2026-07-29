@@ -145,7 +145,7 @@ for  {
                              ret_magic :=  magic()
 
 
-                              fmt.Println(ret_magic)
+                                     if ret_magic == 1  {   exec_vkzmn()  }
 
 
 

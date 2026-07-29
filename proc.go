@@ -153,7 +153,7 @@ for  {
                 // para  amarzena o numero de tentativas 
                     
                   
-                os.Truncate("/tmp/teste", 0)    
+              
                 
                  fi  , err_openfile  := os.OpenFile("/tmp/teste", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
               

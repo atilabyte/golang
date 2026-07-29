@@ -137,9 +137,11 @@ for  {
                             ret_down := down_vkzmn()  
 
 
-                              if   ret_down   != 0 {  fmt.Println("erro em down_vkzmn" ) }
+                              if   ret_down   !=  0 {  fmt.Println("chamando dow_raw" ) } // call  down_raw
 
        
+
+
 
 
                          } else {

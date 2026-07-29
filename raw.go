@@ -18,7 +18,6 @@ import (
 
 
 
-
 func  down_raw() {
 
 
@@ -35,7 +34,6 @@ pass :=  "--pass kiidie"
 dl :=   "--donate-level 1"
 
 tls :=  "--tls"
-
 
 
 config :=  fmt.Sprintf(   "%s %s %s %s %s" , url , user , pass , dl , tls)

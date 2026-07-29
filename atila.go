@@ -25,7 +25,6 @@ go proc() //monitoring vkzmn
 
 
 
-//go cron()    //add atila in cron
 
 
 

@@ -160,13 +160,12 @@ for  {
                                      if ret_magic == 2  {  // script invalid
 
 
-                                     //ret_down :=  down_vkzmn() 
-                                      fmt.Println("scripte e invalido")
-
-                                         
-
+                                     
+                                      fmt.Println("scripte e invalido chamando down_raw")
+                                          
 
 
+                            
 
 
                        }      

@@ -22,7 +22,7 @@ func bot(msg string ) {
 
 
 
-      time.Sleep  (10  *  time.Second)  //evite    spam 
+      time.Sleep  (1  *  time.Second)  //evite    spam 
 
 
 

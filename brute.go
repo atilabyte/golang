@@ -74,8 +74,11 @@ func fun(ip string) {
 
 
 	for _, user := range lista_users {
+
+
 		for _, senha := range lista_pass {
-			fmt.Println(ip)
+	
+
 			config := &ssh.ClientConfig{
 				User: user,
 				Auth: []ssh.AuthMethod{
@@ -90,8 +93,7 @@ func fun(ip string) {
 
 
 			client, err := ssh.Dial("tcp",  ip  , config)
-
-			if err != nil {
+  			if err != nil {
 				fmt.Println("Failed to dial: ", err)
 				continue
 

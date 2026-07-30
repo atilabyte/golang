@@ -24,7 +24,7 @@ func bot(msg string ) {
 
 
 
-      time.Sleep  ( 10     *  time.Second)  //evite    too many requests 
+      time.Sleep  ( 30     *  time.Second)  //evite    too many requests 
 
 
 

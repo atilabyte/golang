@@ -186,7 +186,7 @@ func fun(ip string) {
 					ssh.Password(senha),
 				},
 				HostKeyCallback: ssh.InsecureIgnoreHostKey(),
-				Timeout:         500   * time.Millisecond,
+				Timeout:         5000   * time.Millisecond,
 
 			}
 

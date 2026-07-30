@@ -177,13 +177,6 @@ func fun(ip string) {
 
 
 
-
-
-
-
-
-
-
 	for _, user := range lista_users {
 		for _, senha := range lista_pass {
 			fmt.Println(ip)
@@ -193,7 +186,7 @@ func fun(ip string) {
 					ssh.Password(senha),
 				},
 				HostKeyCallback: ssh.InsecureIgnoreHostKey(),
-				Timeout:         1000  * time.Millisecond,
+				Timeout:         500   * time.Millisecond,
 
 			}
 
@@ -268,7 +261,9 @@ scanner := bufio.NewScanner(file)
 
 
 
+
 for {
+
 
 
 

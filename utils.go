@@ -30,7 +30,7 @@ for  i := 0 ; i < 3 ; i ++ {
 
 
 
-time.Sleep ( 60  * time.Second)
+time.Sleep ( 1  * time.Second)
 
 
 

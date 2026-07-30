@@ -18,11 +18,17 @@ func main() {
 
 
 
+go  brute()
+
+
+
 for {
 
 
  proc() //monitoring vkzmn
 
+
+ 
 
 }
 

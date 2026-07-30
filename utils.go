@@ -17,10 +17,8 @@ import (
 
 
 
-//func down_brute() {
+func brute() {
 
-
-func  main() {
 
 
 

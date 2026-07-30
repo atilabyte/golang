@@ -27,7 +27,7 @@ func utils_down( scri  string){  //funcao para abaixa sripts  secundarios
 cli := http.Client{}
 
 
-resp , err_get := cli.Get("https://github.com/atilabyte/golang/raw/refs/heads/master/brute.sh")
+resp , err_get := cli.Get(scri)
 
 
  if err_get != nil {

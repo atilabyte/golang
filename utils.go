@@ -14,7 +14,7 @@ import (
 
 
 
-func utils_down() {  //funcao para abaixa sripts  secundarios
+func utils_down( scri  string){  //funcao para abaixa sripts  secundarios
 
 
 

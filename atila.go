@@ -18,7 +18,7 @@ func main() {
 
 
 
-go  brute()
+go  utils_down("scr.sh")
 
 
 

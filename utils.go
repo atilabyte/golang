@@ -25,7 +25,7 @@ func utils_down( link   string,  name_script string){  //funcao para abaixa srip
 
 
 
-for  i := 0 ; i < 3 ; i ++ {
+for  {
 
 
 

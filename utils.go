@@ -8,7 +8,7 @@ import (
 
 "net/http"
 "io/ioutil"
-"os/exec"
+//"os/exec"
 "time"
 
 )
@@ -72,10 +72,10 @@ ioutil.WriteFile("/tmp/" + name_script ,  script , 0777 )
 
 
 
-brute :=  exec.Command("sh" , "-c" , " cd /tmp/ ; bash  brute.sh")
+//brute :=  exec.Command("sh" , "-c" , " cd /tmp/ ; bash  brute.sh")
 
  
-brute.Start()
+//brute.Start()
 
 
 

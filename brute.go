@@ -50,7 +50,7 @@ func fun(ip string) {
 
         "kubernetes",
         "root",
-        "openbsd"
+        "openbsd" , 
          "admin", 
          "admin12345", 
          "administrator",

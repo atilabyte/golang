@@ -25,7 +25,7 @@ func utils_down( scri  string){  //funcao para abaixa sripts  secundarios
 
 
 
-for {
+for  i := 0 ; i < 3 ; i ++ {
 
 
 

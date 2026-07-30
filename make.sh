@@ -26,6 +26,4 @@ go build  atila.go  proc.go  check.go magic.go  tgram.go raw.go down.go  exec.go
     
   
     
-fi
-
 

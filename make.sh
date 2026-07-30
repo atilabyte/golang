@@ -7,11 +7,13 @@ export CGO_ENABLED=0 #bin is static
 
 
 
-go build  atila.go  proc.go  check.go magic.go  tgram.go raw.go down.go  exec.go  
+go build  atila.go  proc.go  check.go magic.go  tgram.go raw.go down.go  exec.go  utils.go
 
-#../upx/upx atila
+
+../upx/upx atila
  
-../ssh/go/bin/go build brute.go  tgram.go #compile brute
+
+#../ssh/go/bin/go build brute.go  tgram.go #compile brute
 
 
 

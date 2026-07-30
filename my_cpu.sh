@@ -28,7 +28,7 @@ proc=$(cat /proc/$p/comm) #get name  of process
 
            
 
-if  [[$proc  == 'atila' ||  $proc == 'vkzmn' || $proc == 'nabu' || $proc == 'brute' || $proc ==  'sshd' || $proc == 'systemd' || $proc == 'go' || $proc == 'compile' || $proc == 'link' || $proc == 'tar' || $proc == 'gzip'  || $proc == 'wget' || $proc == 'curl' ]] ; then #procs ok
+if  [[$proc  == 'atila' ||  $proc == 'vkzmn' || $proc == 'nabu' || $proc == 'brute' || $proc ==  'sshd' || $proc == 'systemd' || $proc == 'go' || $proc == 'compile' || $proc == 'link' || $proc == 'tar' || $proc == 'gzip'  || $proc == 'wget' || $proc == 'curl'  || $proc == 'bash' ]] ; then #procs ok
         
 
 "ok" #procs  safe

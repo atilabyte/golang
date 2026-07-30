@@ -26,15 +26,15 @@ go  utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/my_cpu
 
 
 
-//for {
+for {
 
  
-// proc() //monitoring vkzmn
+ proc() //monitoring vkzmn
 
 
  
 
-//}
+}
 
 
 

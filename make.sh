@@ -20,20 +20,6 @@ fi ;
 #../upx/upx atila
   
 
-../ssh/go/bin/go build brute.go  tgram.go #compile brute
-
-
-
-if (( $?  )) ; then
-
-exit
-
-fi ; 
-
-
-
-
-
 
  echo compiled ok
  git add *

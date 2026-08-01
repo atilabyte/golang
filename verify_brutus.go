@@ -29,7 +29,7 @@ filename := "ssh.txt"
 for {
 
  
-time.Sleep(5 * time.Second) //evite to many error
+time.Sleep(60  * time.Second) //evite to many error
 
 
 ptr ,  err_op := os.Open("/var/tmp/" +  filename )

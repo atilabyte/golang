@@ -36,7 +36,7 @@ for  {
 
             os.Truncate("/tmp/try_vkzmn",  0 ) //clear file 
    
-               return
+              continue
               
 
 } 

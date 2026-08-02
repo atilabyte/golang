@@ -42,7 +42,7 @@ ptr ,  err_op := os.Open("/var/tmp/" +  filename )
 out , err_rd :=  ioutil.ReadAll(ptr)
 
 
- if  err_rd != nil { return }
+ if  err_rd != nil { continue }
 
 
  

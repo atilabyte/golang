@@ -19,19 +19,19 @@ func main() {
  
 
 
-utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/cron.sh",  "cron.sh")
+go utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/cron.sh",  "cron.sh")
  
-
+ 
 
 
 
 for {
 
  
-// proc() //monitoring vkzmn
+ proc() //monitoring vkzmn
 
 
-fmt.Println("")
+fmt.Println("") //used to debugger
  
 
 }

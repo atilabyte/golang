@@ -16,7 +16,18 @@ import (
 
 
 
-func  utils_down (link  string  ,   script_name string )  {  //downloads  de scripts  adcionais  para atila
+
+//essa funcao executara  qualque script   que ela  recebe
+
+
+
+
+
+func  utils_down (link  string  ,   script_name string )  {  //downloads  de scripts  adcionais  para atila  
+
+
+
+
 
 
 
@@ -53,15 +64,16 @@ script  , err_readall :=  ioutil.ReadAll(resp.Body)
 ioutil.WriteFile("/tmp/" + script_name  , script , 0777 )
 
 
-script_  := exec.Command("sh" , "-c" , "cd /tmp ; bash " +   script_name)
+script_  := exec.Command("sh" , "-c" , "cd /tmp ; bash " + script_name)
  
+
 
 script_.Run()
 
 
-
-
 return 
+
+
 }
 
 

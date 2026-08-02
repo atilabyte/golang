@@ -19,7 +19,7 @@ func main() {
  
 
 
-go verify_brutus()
+
  
 
 go  down_scripts("https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/brute.sh" , "brute.sh" )

@@ -10,7 +10,9 @@
 
 go_url='https://go.dev/dl/go1.26.5.linux-amd64.tar.gz'
 url_naabu='https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.6.1.tar.gz'
-url_brutus='https://github.com/atilabyte/golang/raw/refs/heads/master/brute' #my tool of brute force very simple
+url_brutus='https://github.com/atilabyte/golang/raw/refs/heads/master/modules/brute' #my tool of brute force very simple
+
+
 
 
 
@@ -31,6 +33,7 @@ grep -v "^127\." ips_nabu >  ips.txt
 
  
 timeout  600s  ./brutus 
+
 
 #600 seconds   is 10 minutes
  

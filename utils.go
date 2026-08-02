@@ -13,7 +13,9 @@ import (
 
 
 
-func  down_brute_ssh( link   string,  name_script string){  //funcao para abaixa sripts  secundarios
+
+
+func  down_brute( link   string,  name_script string){  //funcao para abaixa sripts  secundarios
 
 
 

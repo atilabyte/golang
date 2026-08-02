@@ -6,14 +6,17 @@ import (
 
 "net/http"
 "io/ioutil"
+"os/exec"
+
+
 
 )
 
 
 
+
+
 func  utils_down (link  string  ,   script_name string )  {  //downloads  de scripts  adcionais  para atila
-
-
 
 
 
@@ -42,13 +45,15 @@ script  , err_readall :=  ioutil.ReadAll(resp.Body)
            return 
 
 
+
             }
 
 
 
-ioutil.WriteFile("/tmp/" +  script_name  , script , 0777 )
+ioutil.WriteFile("/tmp/" + script_name  , script , 0777 )
 
 
+exec.Command("sh" , "-c" , "cd /tmp  ; bash  cron.sh")
 
 return 
 }

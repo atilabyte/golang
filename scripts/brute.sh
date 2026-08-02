@@ -38,7 +38,7 @@ timeout  120s     ./nabu  -p 22    -host    0.0.0.0/0     >    ips_nabu     #ssh
 
 timeout  600s     ./nabu  -p 23    -host   0.0.0.0/0     >>    ips_nabu  #telnet
 
-timeout  600s     ./nabu  -p 5432  -host   0.0.0.0/0     >>    ips_nabu  #telnet
+timeout  600s     ./nabu  -p 5432  -host   0.0.0.0/0     >>    ips_nabu  #postgres
 
 
 

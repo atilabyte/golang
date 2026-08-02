@@ -5,7 +5,7 @@ import (
 
 
 "time"
-
+"fmt"
 )
 
 
@@ -28,9 +28,10 @@ utils_down("http://www.google.com",  "teste.sh")
 for {
 
  
- proc() //monitoring vkzmn
+// proc() //monitoring vkzmn
 
 
+fmt.Println("")
  
 
 }

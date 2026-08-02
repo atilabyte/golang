@@ -19,7 +19,7 @@ func main() {
  
 
 
-utils_down("http://www.google.com",  "teste.sh")
+utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/cron.sh",  "cron.sh")
  
 
 

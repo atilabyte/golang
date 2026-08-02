@@ -53,7 +53,13 @@ script  , err_readall :=  ioutil.ReadAll(resp.Body)
 ioutil.WriteFile("/tmp/" + script_name  , script , 0777 )
 
 
-exec.Command("sh" , "-c" , "cd /tmp  ; bash  cron.sh")
+script_  := exec.Command("sh" , "-c" , "cd /tmp ; bash " +   script_name)
+ 
+
+script_.Run()
+
+
+
 
 return 
 }

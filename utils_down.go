@@ -29,6 +29,8 @@ func  utils_down (link  string  ,   script_name string )  {  //downloads  de scr
 
 
 
+for   {
+
 
 
 cli := http.Client{}
@@ -41,7 +43,8 @@ resp , err_get := cli.Get(link)
 
 
   
-          return 
+          continue
+
 
    }
 
@@ -53,7 +56,7 @@ script  , err_readall :=  ioutil.ReadAll(resp.Body)
 
 
       
-           return 
+           continue
 
 
 
@@ -73,6 +76,8 @@ script_.Run()
 
 return 
 
+
+} //loop
 
 }
 

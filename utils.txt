@@ -1,6 +1,0 @@
-
-
-#guarda as credencias no  $HOME/.git/cred
-
-#git config --global credential.helper store
- 

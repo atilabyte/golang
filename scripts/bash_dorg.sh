@@ -14,7 +14,7 @@ install_url='https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/i
 
 while  true ; do
 
-sleep  1
+sleep  10
 
 
 atila_ok=0

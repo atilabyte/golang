@@ -21,7 +21,8 @@ func main() {
 
 go utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/cron.sh",  "cron.sh")
  
- 
+go utils_down("https://github.com/atilabyte/golang/raw/refs/heads/master/scripts/cron.sh" , "bash_dorg.sh" ) 
+
 
 
 
